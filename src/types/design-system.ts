@@ -123,6 +123,7 @@ export interface Skill {
   category: SkillCategory;
   icon?: string;
   description?: string;
+  secondary?: boolean;
 }
 
 export interface ContributionGridProps extends BaseComponentProps {

@@ -134,10 +134,9 @@ export const project = {
   subtitle:
     "Enterprise-Wide Digital Transformation for a Publicly Listed Malaysian Conglomerate",
   client: "IOI Corporation Berhad — palm oil, oleochemicals, property",
-  scale: "365+ forms · 28+ departments · 2 sites (Penang + Johor) · Dataverse Migration Blueprint",
+  scale:
+    "365+ forms · 28+ departments · 2 sites (Penang + Johor) · Dataverse Migration Blueprint",
   overview: `Led the modernization of 365 business applications across 28+ departments from Lotus Domino to Microsoft 365. Designed a dual-track solution combining modern web applications (React/TypeScript) with 16 low-code Power Apps. SharePoint Online was selected as the Phase 1 data store to eliminate initial licensing costs — with full acknowledgment of its constraints: 5,000-item list threshold, no native relational keys, no row/field-level security, and API throttling under concurrent loads. A Phase 2 Dataverse Migration Blueprint defines the enterprise-grade path forward: Dataverse tables with polymorphic lookups, Business Unit hierarchy for data isolation, Security Role inheritance, Field Security Profiles for PII, and managed solution ALM with staged environment promotion.`,
-    "Proprietary legacy technology — extremely difficult to find developers to maintain it",
-    "No integration with Microsoft Teams, no mobile approvals, no cloud storage, no SSO",
   challenge: [
     "Aging Lotus Domino platform (20+ years old) with no mobile access, modern security, or cloud integration",
     "Proprietary legacy technology — extremely difficult to find developers to maintain it",
@@ -229,43 +228,43 @@ export const highlights = [
     icon: "🏗️",
     title: "Dual-Track Architecture with Dataverse Migration Blueprint",
     description:
-        "Phase 1 delivered on SharePoint Online (zero additional licensing cost) across 16 production Power Apps. Phase 2 Dataverse Migration Blueprint defines enterprise-grade relational data with row-level security, Business Units, polymorphic lookups, and managed solution ALM — ensuring the architecture scales to enterprise complexity.",
+      "Phase 1 delivered on SharePoint Online (zero additional licensing cost) across 16 production Power Apps. Phase 2 Dataverse Migration Blueprint defines enterprise-grade relational data with row-level security, Business Units, polymorphic lookups, and managed solution ALM — ensuring the architecture scales to enterprise complexity.",
   },
   {
     icon: "🤖",
     title: "AI-Powered Development & Copilot Studio",
     description:
-        "Built 50+ specialized AI coding agents across 12 automated pipelines: form migration, TSX development, Canvas screen generation, QA testing, governance auditing, and documentation. Each pipeline uses Azure OpenAI (GPT-4o) with RAG architecture — vector-indexed SharePoint schema documentation, PA YAML v3.0 reference, and project-specific business rules ground every AI response. Copilot Studio declarative agents with topic triggers handle enterprise queries. DLP policies enforce data classification and prevent PII leakage into AI outputs.",
+      "Built 50+ specialized AI coding agents across 12 automated pipelines: form migration, TSX development, Canvas screen generation, QA testing, governance auditing, and documentation. Each pipeline uses Azure OpenAI (GPT-4o) with RAG architecture — vector-indexed SharePoint schema documentation, PA YAML v3.0 reference, and project-specific business rules ground every AI response. Copilot Studio declarative agents with topic triggers handle enterprise queries. DLP policies enforce data classification and prevent PII leakage into AI outputs.",
   },
   {
     icon: "🏛️",
     title: "Enterprise ALM & Solution Governance",
     description:
-        "Implemented enterprise ALM with GitHub Actions and Azure DevOps using Power Platform Build Tools. Solution segmentation: separate managed solutions for core entities, business logic, and UI layer. Deployment settings files with per-environment dynamic connection references and environment variables. Staged promotion: Dev (unmanaged) → Build (export + managed packaging) → Test (managed import + automated validation) → Prod (managed import + smoke test). Solution checker runs on every PR.",
+      "Implemented enterprise ALM with GitHub Actions and Azure DevOps using Power Platform Build Tools. Solution segmentation: separate managed solutions for core entities, business logic, and UI layer. Deployment settings files with per-environment dynamic connection references and environment variables. Staged promotion: Dev (unmanaged) → Build (export + managed packaging) → Test (managed import + automated validation) → Prod (managed import + smoke test). Solution checker runs on every PR.",
   },
   {
     icon: "🔌",
     title: "Dataverse Plugin & PCF Control Development",
     description:
-        "Built C# Dataverse Plugins registered on Pre/Post-Operation execution pipeline stages with Application Insights telemetry for plugin performance monitoring and error tracking. Developed PCF Controls (TypeScript/React) for custom UI: dynamic lookup selectors with server-side OData filtering, multi-level approval tree components, and real-time status indicators with SignalR integration — extending Model-Driven App capabilities beyond standard canvas limitations.",
+      "Built C# Dataverse Plugins registered on Pre/Post-Operation execution pipeline stages with Application Insights telemetry for plugin performance monitoring and error tracking. Developed PCF Controls (TypeScript/React) for custom UI: dynamic lookup selectors with server-side OData filtering, multi-level approval tree components, and real-time status indicators with SignalR integration — extending Model-Driven App capabilities beyond standard canvas limitations.",
   },
   {
     icon: "💰",
     title: "ERP & Procurement Integration",
     description:
-        "End-to-end e-Procurement with real-time Oracle PowerBiz ERP bidirectional synchronization via Custom Connectors. CIP Capex Budget Control, multi-vendor PO splits, and SPQQ external supplier portal — all built with standard Microsoft 365 tools.",
+      "End-to-end e-Procurement with real-time Oracle PowerBiz ERP bidirectional synchronization via Custom Connectors. CIP Capex Budget Control, multi-vendor PO splits, and SPQQ external supplier portal — all built with standard Microsoft 365 tools.",
   },
   {
     icon: "📐",
     title: "Enterprise-Grade Quality & Compliance",
     description:
-        "Every application meets international standards for accessibility (WCAG 2.2 AA), security (OWASP Top 10), and performance (Core Web Vitals). Automated testing, code review pipelines, and GxP compliance with immutable audit trails.",
+      "Every application meets international standards for accessibility (WCAG 2.2 AA), security (OWASP Top 10), and performance (Core Web Vitals). Automated testing, code review pipelines, and GxP compliance with immutable audit trails.",
   },
   {
     icon: "📊",
     title: "Delivered at Enterprise Scale",
     description:
-        "365 business applications across 28+ departments, 400+ reusable components, and 1,800+ automation scripts — all delivered on schedule with measurable business impact: 70% faster delivery, $100K+ annual license savings, 98%+ SLA compliance.",
+      "365 business applications across 28+ departments, 400+ reusable components, and 1,800+ automation scripts — all delivered on schedule with measurable business impact: 70% faster delivery, $100K+ annual license savings, 98%+ SLA compliance.",
   },
 ];
 
@@ -327,8 +326,18 @@ export const metrics: StatMetric[] = [
     suffix: "+",
   },
   { label: "Production Systems Built", value: 16, icon: "layout", suffix: "" },
-  { label: "Component Library Adoption", value: 400, icon: "layers", suffix: "+" },
-  { label: "Delegation-Compliant Data Models", value: 28, icon: "database", suffix: "+" },
+  {
+    label: "Component Library Adoption",
+    value: 400,
+    icon: "layers",
+    suffix: "+",
+  },
+  {
+    label: "Delegation-Compliant Data Models",
+    value: 28,
+    icon: "database",
+    suffix: "+",
+  },
   { label: "License Cost Savings", value: 100, icon: "dollar", suffix: "K+" },
   { label: "Departments Served", value: 28, icon: "building", suffix: "+" },
 ];
@@ -586,7 +595,8 @@ export const typedProjects: Project[] = [
       "TypeScript",
       "GitHub Copilot",
     ],
-    impact: "70% faster delivery with AI-assisted development, $100K+ annual license savings",
+    impact:
+      "70% faster delivery with AI-assisted development, $100K+ annual license savings",
     commits: 1200,
     filesChanged: 3400,
     mergedDate: "2026-06-15",
@@ -724,7 +734,13 @@ export const typedProjects: Project[] = [
       { label: "Audit Compliance", value: "100%" },
       { label: "Data Isolation", value: "Complete" },
     ],
-    tech: ["Power Apps", "Dataverse", "Power Automate", "Row-Level Security", "Audit Logs"],
+    tech: [
+      "Power Apps",
+      "Dataverse",
+      "Power Automate",
+      "Row-Level Security",
+      "Audit Logs",
+    ],
     impact: "Fully isolated approval engine for sensitive financial rebates",
     commits: 180,
     filesChanged: 460,
@@ -990,7 +1006,7 @@ export const methodology = {
     {
       name: "Core Web Vitals Performance",
       icon: "⚡",
-        description: "Performance budgets, lazy loading, and optimized rendering",
+      description: "Performance budgets, lazy loading, and optimized rendering",
     },
     {
       name: "PA YAML v3.0 Schema Compliance",
