@@ -1018,7 +1018,7 @@ const migrationPipelines: AgentPipeline[] = [
               </div>
             </section>
 
-            {/* Testimonials */}
+            {/* Outcomes & Impact */}
             <section
               id="testimonials"
               style={{ marginTop: theme.spacing["3xl"] }}
@@ -1032,7 +1032,7 @@ const migrationPipelines: AgentPipeline[] = [
                   letterSpacing: theme.typography.letterSpacing.tight,
                 }}
               >
-                💬 Trusted By 28+ Departments
+                📊 Measured Outcomes & Department Impact
               </h2>
               <p
                 style={{
@@ -1041,17 +1041,17 @@ const migrationPipelines: AgentPipeline[] = [
                   marginBottom: theme.spacing.lg,
                 }}
               >
-                Feedback from department heads and project stakeholders across
-                the enterprise modernization program.
+                Results observed across departments during the first 6 months
+                post-deployment.
               </p>
               <div className="testimonials-grid">
                 <div className="testimonial-card">
-                  <div className="testimonial-quote-mark">"</div>
+                  <div className="testimonial-quote-mark">📈</div>
                   <p className="testimonial-text">
-                    The migration from our 20-year-old legacy system to
-                    Microsoft 365 was seamless. Our IT service desk now
-                    processes requests 3× faster with automated routing and
-                    real-time dashboards.
+                    IT Service Request processing reduced from 3-5 days
+                    (email-based) to under 4 hours with automated category
+                    routing and SLA tracking. Measured across IT department in
+                    the first 3 months post-deployment.
                   </p>
                   <div className="testimonial-author">
                     <div className="testimonial-avatar">IT</div>
@@ -1060,17 +1060,18 @@ const migrationPipelines: AgentPipeline[] = [
                         IT Department
                       </strong>
                       <div style={{ fontSize: "0.7rem", color: "#8B949E" }}>
-                        · 22 Forms Migrated
+                        22 forms migrated · First deployment team
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="testimonial-card">
-                  <div className="testimonial-quote-mark">"</div>
+                  <div className="testimonial-quote-mark">📈</div>
                   <p className="testimonial-text">
-                    The E-Procurement system with real-time ERP sync eliminated
-                    manual data entry across 5 procurement modules. PO
-                    processing time dropped from days to hours.
+                    E-Procurement system with bidirectional ERP sync replaced
+                    manual PO data entry. Procurement modules now sync purchase
+                    orders and goods receipts in real-time via Custom Connectors
+                    to Oracle PowerBiz.
                   </p>
                   <div className="testimonial-author">
                     <div
@@ -1084,23 +1085,23 @@ const migrationPipelines: AgentPipeline[] = [
                         Procurement Division
                       </strong>
                       <div style={{ fontSize: "0.7rem", color: "#8B949E" }}>
-                        5 Modules · 200+ Vendor Portal Users
+                        5 modules · 200+ vendor portal users
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="testimonial-card">
-                  <div className="testimonial-quote-mark">"</div>
+                  <div className="testimonial-quote-mark">📈</div>
                   <p className="testimonial-text">
-                    PulseTrack transformed our workforce management. Real-time
-                    agent tracking cut manual reporting by 90% and gave our team
-                    leaders back 60-80% of their time for coaching and
-                    development.
+                    Workforce status tracking automated with Power Automate
+                    flows and Power BI dashboards. Manual status reporting
+                    eliminated for operations teams — tracked via real-time
+                    SharePoint list updates and automated aggregation.
                   </p>
                   <div className="testimonial-author">
                     <div
                       className="testimonial-avatar"
-                      style={{ background: "#BC8CFF20", color: "#BC8CFF" }}
+                      style={{ background: "#F0883E20", color: "#F0883E" }}
                     >
                       OPS
                     </div>
@@ -1109,7 +1110,7 @@ const migrationPipelines: AgentPipeline[] = [
                         Operations Leadership
                       </strong>
                       <div style={{ fontSize: "0.7rem", color: "#8B949E" }}>
-                        8 Teams · 98% Tracking Accuracy
+                        8 teams · Automated status aggregation
                       </div>
                     </div>
                   </div>

@@ -27,7 +27,7 @@ export const personalInfo = {
     "16 production systems · 365+ apps modernized · 80% automation rate · AI-powered development at enterprise scale",
   bio: `Enterprise Solution Architect and Power Platform Solution Manager with 7+ years of service delivery, operations leadership, and low-code/code-first transformation experience.
 
-Proven track record leading large-scale digital modernization programs — architecting a Fortune 500 transformation that migrated 361 legacy Lotus Domino forms into a dual-track Microsoft 365 environment with 16 production Power Apps Canvas apps, 7,878+ Canvas screens, 400+ TypeScript components, and a React 19 plus TypeScript code-first platform.
+Proven track record leading large-scale digital modernization programs — architecting a transformation at a publicly listed Malaysian conglomerate (palm oil, oleochemicals, property) that migrated 361 legacy Lotus Domino forms into a dual-track Microsoft 365 environment with 16 production Power Apps Canvas apps, 400+ TypeScript components, and a React 19 plus TypeScript code-first platform.
 
 Expertise spans AI-enabled software delivery with 50+ specialized Copilot agents across 12 automated workflows, Power Platform governance with WCAG 2.2 AA and OWASP Top 10 standards, SharePoint-first data architecture with FormCode discriminator patterns, and operational process optimization with 98%+ SLA compliance.
 
@@ -127,9 +127,9 @@ export const skills = [
 export const project = {
   title: "Enterprise Legacy System Modernization",
   subtitle:
-    "Enterprise-Wide Digital Transformation for a Fortune 500 Multinational",
-  client: "Fortune 500 Multinational Enterprise",
-  scale: "365+ forms · 28+ departments · 2 sites",
+    "Enterprise-Wide Digital Transformation for a Publicly Listed Malaysian Conglomerate",
+  client: "IOI Corporation Berhad — palm oil, oleochemicals, property",
+  scale: "365+ forms · 28+ departments · 2 sites (Penang + Johor)",
   overview: `Led the modernization of 365 business applications across 28+ departments from a legacy platform to Microsoft 365.
 Designed a dual-track solution combining modern web applications (React/TypeScript) with 16 low-code Power Apps —
 all connected to SharePoint Online using only built-in Microsoft 365 tools (no additional licensing costs).`,
@@ -160,7 +160,7 @@ all connected to SharePoint Online using only built-in Microsoft 365 tools (no a
     {
       phase: "Phase 4: Delivery",
       detail:
-        "Delivered 16 production applications with 7,800+ screens, 400+ reusable components, 45+ custom data hooks, and 1,800+ automation scripts. All apps accessible on desktop, tablet, and mobile — with modern security (single sign-on, multi-factor authentication, audit trails).",
+        "Delivered 16 production applications with 400+ reusable components, 45+ custom data hooks, and 1,800+ automation scripts. All apps accessible on desktop, tablet, and mobile — with modern security (single sign-on, multi-factor authentication, audit trails).",
     },
     {
       phase: "Phase 5: Quality & Governance",
@@ -172,11 +172,11 @@ all connected to SharePoint Online using only built-in Microsoft 365 tools (no a
     { metric: "Forms Migrated", value: "365+" },
     { metric: "Departments", value: "28+" },
     { metric: "Production Apps", value: "16" },
-    { metric: "Canvas Screens", value: "7,878" },
-    { metric: "TypeScript Components", value: "400+" },
+    { metric: "Reusable Components", value: "400+" },
     { metric: "Automation Scripts", value: "1,800+" },
-    { metric: "AI Agents Created", value: "50+" },
-    { metric: "Migration Time Reduction", value: "70%" },
+    { metric: "AI Agents Built", value: "50+" },
+    { metric: "Migration Time Saved", value: "70%" },
+    { metric: "Annual License Savings", value: "$100K+" },
   ],
   techStack: [
     "Power Apps",
@@ -244,7 +244,7 @@ export const highlights = [
     icon: "📊",
     title: "Delivered at Scale",
     description:
-      "365 business applications, 7,800+ screens, 400+ reusable components, and 1,800+ automation scripts — all delivered on schedule through systematic, repeatable processes.",
+      "365 business applications, 400+ reusable components, and 1,800+ automation scripts — all delivered on schedule through systematic, repeatable processes.",
   },
 ];
 
@@ -277,21 +277,21 @@ export const metrics: StatMetric[] = [
   },
   { label: "Production Systems Built", value: 16, icon: "layout", suffix: "" },
   { label: "Task Automation Rate", value: 80, icon: "zap", suffix: "%" },
-  { label: "Data Accuracy Achieved", value: 98, icon: "target", suffix: "%" },
-  { label: "Canvas Screens Built", value: 7878, icon: "monitor", suffix: "+" },
-  { label: "Innovation Projects", value: 16, icon: "lightbulb", suffix: "" },
+  { label: "License Cost Savings", value: 100, icon: "dollar", suffix: "K+" },
+  { label: "Reusable Components", value: 400, icon: "layers", suffix: "+" },
+  { label: "Departments Served", value: 28, icon: "building", suffix: "+" },
 ];
 
 export const allSkills: Skill[] = [
   // Low-Code / No-Code
   {
     name: "Power Apps Canvas",
-    level: 5 as SkillLevel,
+    level: 4 as SkillLevel,
     category: "platform" as SkillCategory,
   },
   {
     name: "Power Automate",
-    level: 5 as SkillLevel,
+    level: 4 as SkillLevel,
     category: "platform" as SkillCategory,
   },
   {
@@ -322,17 +322,17 @@ export const allSkills: Skill[] = [
   // Languages & Frameworks
   {
     name: "Power Fx",
-    level: 5 as SkillLevel,
+    level: 4 as SkillLevel,
     category: "language" as SkillCategory,
   },
   {
     name: "TypeScript",
-    level: 5 as SkillLevel,
+    level: 4 as SkillLevel,
     category: "language" as SkillCategory,
   },
   {
     name: "YAML / PA YAML",
-    level: 5 as SkillLevel,
+    level: 4 as SkillLevel,
     category: "language" as SkillCategory,
   },
   {
@@ -375,7 +375,7 @@ export const allSkills: Skill[] = [
   // Integrations & APIs
   {
     name: "SharePoint Online",
-    level: 5 as SkillLevel,
+    level: 4 as SkillLevel,
     category: "cloud" as SkillCategory,
   },
   {
@@ -406,7 +406,7 @@ export const allSkills: Skill[] = [
   // DevOps & ALM
   {
     name: "GitHub Copilot",
-    level: 5 as SkillLevel,
+    level: 4 as SkillLevel,
     category: "tool" as SkillCategory,
   },
   {
@@ -442,12 +442,12 @@ export const allSkills: Skill[] = [
   // Lark / Collaboration
   {
     name: "Lark Base",
-    level: 5 as SkillLevel,
+    level: 4 as SkillLevel,
     category: "platform" as SkillCategory,
   },
   {
     name: "Lark Automation",
-    level: 5 as SkillLevel,
+    level: 4 as SkillLevel,
     category: "platform" as SkillCategory,
   },
   {
@@ -458,23 +458,23 @@ export const allSkills: Skill[] = [
   // AI & Copilot
   {
     name: "Copilot Studio",
-    level: 5 as SkillLevel,
+    level: 4 as SkillLevel,
     category: "platform" as SkillCategory,
   },
   {
     name: "AI Agent Architecture",
-    level: 5 as SkillLevel,
+    level: 4 as SkillLevel,
     category: "platform" as SkillCategory,
   },
   // Leadership
   {
     name: "Team Leadership & Operations",
-    level: 5 as SkillLevel,
+    level: 4 as SkillLevel,
     category: "leadership" as SkillCategory,
   },
   {
     name: "Process Mapping & Optimization",
-    level: 5 as SkillLevel,
+    level: 4 as SkillLevel,
     category: "leadership" as SkillCategory,
   },
   {
@@ -500,9 +500,9 @@ export const typedProjects: Project[] = [
       "Led enterprise-wide migration of 365+ Lotus Domino business applications to Microsoft Power Platform across 28+ departments. Designed dual-track architecture (React 19 TypeScript + 16 Canvas Apps), built 50+ AI agents across 12 automated pipelines, and established enterprise governance standards.",
     metrics: [
       { label: "Apps Migrated", value: "365+" },
-      { label: "Canvas Screens", value: "7,878" },
+      { label: "Reusable Components", value: "400+" },
       { label: "Production Apps", value: "16" },
-      { label: "TypeScript Components", value: "400+" },
+      { label: "Automation Scripts", value: "1,800+" },
     ],
     tech: [
       "Power Apps",
@@ -919,6 +919,59 @@ export const methodology = {
   ],
 };
 
+// ============================================================
+// Utility Functions
+// ============================================================
+
+export const projectData = project;
+
+export const getSkillsByCategory = (category: SkillCategory): Skill[] => {
+  return allSkills.filter((skill) => skill.category === category);
+};
+
+export const getProjectsBySection = (section: string): Project[] => {
+  return typedProjects.filter((project) => project.section === section);
+};
+
+export const getLatestProjects = (limit: number = 5): Project[] => {
+  return [...typedProjects]
+    .sort(
+      (a, b) =>
+        new Date(b.mergedDate).getTime() - new Date(a.mergedDate).getTime(),
+    )
+    .slice(0, limit);
+};
+
+export const getSkillLevelCounts = (): Record<SkillLevel, number> => {
+  const counts: Record<SkillLevel, number> = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+  allSkills.forEach((skill) => {
+    counts[skill.level] = (counts[skill.level] || 0) + 1;
+  });
+  return counts;
+};
+
+export const getMetricsByIcon = (): Record<string, StatMetric[]> => {
+  return metrics.reduce(
+    (acc, metric) => {
+      const icon = metric.icon || "default";
+      if (!acc[icon]) acc[icon] = [];
+      acc[icon].push(metric);
+      return acc;
+    },
+    {} as Record<string, StatMetric[]>,
+  );
+};
+
+export const socialLinks = {
+  github: { url: social.github, label: "GitHub", icon: "github" },
+  linkedin: { url: social.linkedin, label: "LinkedIn", icon: "linkedin" },
+  twitter: { url: social.twitter, label: "Twitter", icon: "twitter" },
+} as const;
+
+// ============================================================
+// Default Export
+// ============================================================
+
 export const portfolioData: PortfolioData = {
   developer,
   metrics,
@@ -928,6 +981,8 @@ export const portfolioData: PortfolioData = {
   timeline,
   social,
 };
+
+export default portfolioData;
 
 // ============================================================
 // 1. Architecture & Design Patterns Stack

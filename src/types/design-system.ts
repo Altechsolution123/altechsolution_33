@@ -69,11 +69,14 @@ export interface Metric {
   value: string;
 }
 
+export type ProjectStatus = "open" | "merged" | "closed";
+export type StatusColor = "green" | "purple" | "orange" | "red" | "blue" | "gray";
+
 export interface Project {
   id: string | number;
   title: string;
-  status: "open" | "merged" | "closed";
-  statusColor?: "green" | "purple" | "orange" | "red";
+  status: ProjectStatus;
+  statusColor?: StatusColor;
   description: string;
   metrics: Metric[];
   tech: string[];

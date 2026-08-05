@@ -1,8 +1,8 @@
 import React from "react";
-import { useTheme } from "../../styles/theme";
 import { AnimatedTitle } from "../Effects/AnimatedTitle";
 import { personalInfo } from "../../data/portfolio";
 import type { DeveloperInfo } from "../../hooks/usePortfolio";
+import styles from "./Hero.module.css";
 
 // ============================================================
 // Types
@@ -15,8 +15,6 @@ export interface HeroProps {
 // Component
 // ============================================================
 export const Hero: React.FC<HeroProps> = ({ developer }) => {
-  const { theme } = useTheme();
-
   const typingPhrases = [
     "Power Platform Architect",
     "Enterprise Solution Architect",
@@ -25,98 +23,36 @@ export const Hero: React.FC<HeroProps> = ({ developer }) => {
   ];
 
   return (
-    <section
-      id="hero"
-      style={{
-        minHeight: "80vh",
-        display: "flex",
-        alignItems: "center",
-        paddingTop: "40px",
-        paddingBottom: "40px",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "40px",
-          flexWrap: "wrap",
-        }}
-      >
-        {/* Avatar */}
-        <div style={{ flexShrink: 0 }}>
+    <section id="hero" className={styles.hero}>
+      <div className={`${styles.heroInner} stagger-children`}>
+        {/* Avatar — glow pulse draws the eye */}
+        <div className={styles.heroAvatar}>
           <img
             src={
               developer.avatar || `https://github.com/${developer.github}.png`
             }
             alt={`${developer.name} — ${developer.title}`}
-            style={{
-              width: "140px",
-              height: "140px",
-              borderRadius: theme.borderRadius.full,
-              border: `3px solid ${theme.colors.accent.blue}`,
-              boxShadow: `0 0 30px ${theme.colors.accent.blue}30`,
-            }}
+            className={`${styles.heroAvatarImg} glow-pulse`}
             loading="eager"
             fetchPriority="high"
             decoding="async"
           />
         </div>
 
-        <div style={{ flex: 1, minWidth: "300px", maxWidth: "640px" }}>
-          {/* Status badge */}
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              padding: "6px 14px",
-              backgroundColor: `${theme.colors.accent.green}15`,
-              border: `1px solid ${theme.colors.accent.green}30`,
-              borderRadius: theme.borderRadius.full,
-              marginBottom: "24px",
-              fontSize: theme.typography.fontSize.sm,
-              fontWeight: 500,
-              color: theme.colors.accent.green,
-            }}
-          >
-            <span
-              style={{
-                width: "8px",
-                height: "8px",
-                borderRadius: "50%",
-                backgroundColor: theme.colors.accent.green,
-                boxShadow: `0 0 8px ${theme.colors.accent.green}`,
-              }}
-            />
+        <div className={styles.heroContent}>
+          {/* Status badge — pulse animation */}
+          <div className={`${styles.heroStatus} glow-pulse`}>
+            <span className={styles.heroStatusDot} />
             {developer.status}
           </div>
 
-          {/* Name with location */}
-          <h1
-            style={{
-              fontSize: theme.typography.fontSize["5xl"],
-              fontWeight: 800,
-              lineHeight: 1.05,
-              letterSpacing: theme.typography.letterSpacing.tight,
-              color: theme.colors.text.primary,
-              margin: "0 0 8px 0",
-            }}
-          >
+          {/* Name — shimmer draws attention */}
+          <h1 className={`${styles.heroName} shimmer-text`}>
             {developer.name}
           </h1>
 
           {/* Animated title */}
-          <h2
-            style={{
-              fontSize: theme.typography.fontSize["2xl"],
-              fontWeight: 600,
-              lineHeight: 1.4,
-              color: theme.colors.accent.blue,
-              margin: "0 0 20px 0",
-              minHeight: "2rem",
-            }}
-          >
+          <h2 className={styles.heroTitle}>
             <AnimatedTitle
               phrases={typingPhrases}
               typingSpeed={60}
@@ -125,113 +61,35 @@ export const Hero: React.FC<HeroProps> = ({ developer }) => {
             />
           </h2>
 
-          {/* Bio — short punchy tagline, full story in About section */}
-          <p
-            style={{
-              fontSize: theme.typography.fontSize.lg,
-              color: theme.colors.text.secondary,
-              lineHeight: 1.7,
-              marginBottom: "12px",
-              maxWidth: "640px",
-            }}
-          >
-            {personalInfo.tagline}
-          </p>
-          <p
-            style={{
-              color: theme.colors.text.muted,
-              fontSize: theme.typography.fontSize.sm,
-              marginBottom: "28px",
-              display: "flex",
-              gap: "16px",
-              flexWrap: "wrap",
-            }}
-          >
+          {/* Tagline */}
+          <p className={styles.heroTagline}>{personalInfo.tagline}</p>
+
+          {/* Meta */}
+          <p className={styles.heroMeta}>
             <span>📍 {developer.location}</span>
-            <a
-              href={
-                developer.linkedin
-                  ? `https://linkedin.com/in/${developer.linkedin}`
-                  : "#"
-              }
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                color: theme.colors.accent.blue,
-                textDecoration: "none",
-              }}
-            >
-              🔗 linkedin.com/in/{developer.linkedin}
-            </a>
+            {developer.email && (
+              <a href={`mailto:${developer.email}`}>✉️ {developer.email}</a>
+            )}
           </p>
 
-          {/* CTA Buttons */}
-          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-            <a
-              href="#case-study"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                padding: "14px 28px",
-                backgroundColor: theme.colors.accent.blue,
-                color: theme.colors.text.inverse,
-                borderRadius: theme.borderRadius.md,
-                fontWeight: 600,
-                textDecoration: "none",
-                fontSize: theme.typography.fontSize.md,
-                transition: theme.transitions.fast,
-              }}
-            >
+          {/* CTA — hover bounce draws clicks */}
+          <div className={`${styles.heroActions} stagger-children`}>
+            <a href="#case-study" className="btn btn-primary hover-bounce">
               View Case Study
-              <span aria-hidden="true">→</span>
             </a>
-
-            <a
-              href={`mailto:${developer.email}`}
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                padding: "14px 28px",
-                backgroundColor: "transparent",
-                color: theme.colors.text.primary,
-                border: `1.5px solid ${theme.colors.border.default}`,
-                borderRadius: theme.borderRadius.md,
-                fontWeight: 600,
-                textDecoration: "none",
-                fontSize: theme.typography.fontSize.md,
-                transition: theme.transitions.fast,
-              }}
-            >
+            <a href="#contact" className="btn btn-outline hover-bounce">
               Get in Touch
             </a>
-
-            <a
-              href={
-                developer.github
-                  ? `https://github.com/${developer.github}`
-                  : "#"
-              }
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                padding: "14px 28px",
-                backgroundColor: "transparent",
-                color: theme.colors.text.secondary,
-                border: `1.5px solid ${theme.colors.border.default}`,
-                borderRadius: theme.borderRadius.md,
-                fontWeight: 600,
-                textDecoration: "none",
-                fontSize: theme.typography.fontSize.md,
-                transition: theme.transitions.fast,
-              }}
-            >
-              GitHub
-            </a>
+            {developer.github && (
+              <a
+                href={`https://github.com/${developer.github}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-outline hover-bounce"
+              >
+                GitHub
+              </a>
+            )}
           </div>
         </div>
       </div>

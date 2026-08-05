@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
 import { useTheme } from "../../styles/theme";
+import styles from "./Gallery.module.css";
 
 // ============================================================
 // Types
@@ -155,6 +157,56 @@ const PlatformSection: React.FC<{ platform: Platform; theme: any }> = ({
 );
 
 // ============================================================
+// Lightbox Component
+// ============================================================
+const Lightbox: React.FC<{
+  image: GalleryImage;
+  onClose: () => void;
+}> = ({ image, onClose }) => {
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    },
+    [onClose],
+  );
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [handleKeyDown]);
+
+  return (
+    <div
+      className={styles.lightbox}
+      onClick={onClose}
+      role="dialog"
+      aria-label="Image preview"
+      aria-modal="true"
+    >
+      <button
+        className={styles.lightboxClose}
+        onClick={onClose}
+        aria-label="Close"
+      >
+        ✕
+      </button>
+      <img
+        src={image.src}
+        alt={image.alt}
+        className={styles.lightboxImage}
+        onClick={(e) => e.stopPropagation()}
+      />
+      <div className={styles.lightboxCaption}>{image.alt}</div>
+      <div className={styles.lightboxHint}>Press ESC to close</div>
+    </div>
+  );
+};
+
+// ============================================================
 // Gallery Component
 // ============================================================
 const Gallery: React.FC = () => {
@@ -217,13 +269,7 @@ const Gallery: React.FC = () => {
       </p>
 
       {/* Masonry Grid */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: "16px",
-        }}
-      >
+      <div className={styles.galleryGrid}>
         {images.map((img, i) => {
           // Inject platform section headers before first screenshot of each platform
           const platform = platforms.find((p) => p.id === img.platformId);
@@ -240,64 +286,20 @@ const Gallery: React.FC = () => {
                 />
               )}
               <button
+                className={styles.galleryItem}
                 onClick={() => setSelectedImage(img)}
-                style={{
-                  background: "none",
-                  padding: 0,
-                  cursor: "pointer",
-                  borderRadius: theme.borderRadius.lg,
-                  overflow: "hidden",
-                  backgroundColor: theme.colors.bg.secondary,
-                  border: `1px solid ${theme.colors.border.default}`,
-                  transition: theme.transitions.base,
-                  position: "relative",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "scale(1.02)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "scale(1)";
-                }}
               >
                 <img
                   src={img.src}
                   alt={img.alt}
                   loading="lazy"
-                  style={{
-                    width: "100%",
-                    height: "200px",
-                    objectFit: "cover",
-                    display: "block",
-                  }}
+                  className={styles.galleryItemImage}
                 />
-                <div
-                  style={{
-                    padding: "10px 14px",
-                    textAlign: "left",
-                  }}
-                >
-                  <span
-                    style={{
-                      display: "inline-block",
-                      fontSize: theme.typography.fontSize.xs,
-                      color: platform
-                        ? platform.color
-                        : theme.colors.accent.blue,
-                      fontWeight: 600,
-                      marginBottom: "4px",
-                    }}
-                  >
+                <div className={styles.galleryItemBody}>
+                  <span className={styles.galleryItemCategory}>
                     {img.category}
                   </span>
-                  <span
-                    style={{
-                      display: "block",
-                      fontSize: theme.typography.fontSize.sm,
-                      color: theme.colors.text.secondary,
-                    }}
-                  >
-                    {img.alt}
-                  </span>
+                  <span className={styles.galleryItemAlt}>{img.alt}</span>
                 </div>
               </button>
             </React.Fragment>
@@ -506,55 +508,15 @@ const Gallery: React.FC = () => {
         ))}
       </div>
 
-      {/* Lightbox Modal */}
-      {selectedImage && (
-        <div
-          onClick={() => setSelectedImage(null)}
-          style={{
-            position: "fixed",
-            inset: 0,
-            backgroundColor: "rgba(0,0,0,0.85)",
-            zIndex: 1000,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: "40px",
-            cursor: "pointer",
-          }}
-          role="dialog"
-          aria-label="Image preview"
-          aria-modal="true"
-        >
-          <button
-            onClick={() => setSelectedImage(null)}
-            aria-label="Close"
-            style={{
-              position: "absolute",
-              top: "20px",
-              right: "30px",
-              background: "none",
-              border: "none",
-              color: "#fff",
-              fontSize: "2rem",
-              cursor: "pointer",
-              zIndex: 1001,
-            }}
-          >
-            ✕
-          </button>
-          <img
-            src={selectedImage.src}
-            alt={selectedImage.alt}
-            style={{
-              maxWidth: "90vw",
-              maxHeight: "85vh",
-              borderRadius: "8px",
-              objectFit: "contain",
-            }}
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      )}
+      {/* Lightbox Modal — portal to body so position:fixed escapes parallax */}
+      {selectedImage &&
+        createPortal(
+          <Lightbox
+            image={selectedImage}
+            onClose={() => setSelectedImage(null)}
+          />,
+          document.body,
+        )}
     </section>
   );
 };

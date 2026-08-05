@@ -24,7 +24,7 @@ const ARCH_LAYERS: ArchLayer[] = [
       "Dual-track delivery: React 19 TypeScript code-first app for complex functionality across all departments, plus 16 Canvas Apps (Power Fx + PA YAML v3.0) for per-department business forms.",
     details: [
       "React 19 with Vite, shadcn/ui, Jotai state management, and TanStack Query",
-      "16 Canvas Apps with 7,878 screen definitions in PA YAML v3.0",
+      "16 Canvas Apps with reusable component definitions in PA YAML v3.0",
       "HTML Text/HtmlViewer for rich read-only visual areas matching UI designs 1:1",
       "Triple Container Strategy for responsive layouts across desktop, tablet, and mobile",
       "IntersectionObserver-based scroll animations and glass-morphism design system",
