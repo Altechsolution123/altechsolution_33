@@ -70,7 +70,13 @@ export interface Metric {
 }
 
 export type ProjectStatus = "open" | "merged" | "closed";
-export type StatusColor = "green" | "purple" | "orange" | "red" | "blue" | "gray";
+export type StatusColor =
+  | "green"
+  | "purple"
+  | "orange"
+  | "red"
+  | "blue"
+  | "gray";
 
 export interface Project {
   id: string | number;
@@ -84,7 +90,7 @@ export interface Project {
   commits: number;
   filesChanged: number;
   mergedDate: string;
-  section?: "Power Platform" | "Lark Ecosystem";
+  section?: "Power Platform" | "Lark Ecosystem" | "Operational History";
   image?: string;
   links?: {
     demo?: string;
