@@ -207,37 +207,37 @@
   ],
   "projects": [
     {
-      "title": "IOI Domino → Microsoft 365 Migration",
+      "title": "IOI Domino → Dataverse Enterprise Architecture",
       "metrics": [
         {
           "value": "361",
-          "label": "Apps Migrated"
+          "label": "Forms Catalogued"
         },
         {
-          "value": "7,878",
-          "label": "Canvas Screens"
+          "value": "28+",
+          "label": "Dataverse Tables"
         },
         {
           "value": "16",
           "label": "Production Apps"
         },
         {
-          "value": "400+",
-          "label": "TypeScript Components"
+          "value": "12+",
+          "label": "C# Plugins"
         }
       ],
       "mergedDate": "2026-06-15",
       "commits": 1200,
       "statusColor": "green",
-      "description": "Led enterprise-wide migration of 361 Lotus Domino business applications to Microsoft Power Platform across 28+ departments. Designed dual-track architecture (React 19 TypeScript + 16 Canvas Apps), built 50+ AI agents across 12 automated pipelines, and established enterprise governance standards.",
+      "description": "Led enterprise-wide modernization of 361 Lotus Domino applications across 28+ departments. Designed Dataverse-first architecture with MainDB parent tables, polymorphic child lookups, Business Unit hierarchy, Security Role inheritance, and Field Security Profiles. SharePoint Online deployed as interim staging layer to avoid $960K/yr premium licensing — with documented migration path to Dataverse as production target.",
       "tech": [
+        "Dataverse",
         "Power Apps",
-        "Power Automate",
-        "SharePoint Online",
+        "C# Plugins",
         "React 19",
         "TypeScript",
-        "Vite",
-        "GitHub Copilot"
+        "Power Automate",
+        "GitHub Actions"
       ],
       "id": 1,
       "links": {
@@ -268,13 +268,14 @@
       "mergedDate": "2026-04-20",
       "commits": 450,
       "statusColor": "purple",
-      "description": "Built 50+ specialized AI agents organized into 12 automated workflow pipelines — form migration, TSX development, Canvas migration, QA, and governance. Reduced migration delivery time by 70%.",
+      "description": "Built 50+ specialized AI agents organized into 12 automated workflow pipelines — form migration, TSX development, Canvas screen generation, QA testing, and governance auditing. Each agent uses Azure OpenAI (GPT-4o) with RAG architecture grounded in Dataverse schema docs and PA YAML v3.0 reference. DLP policies enforce data classification and prevent PII leakage.",
       "tech": [
+        "Azure OpenAI",
         "GitHub Copilot",
         "Python",
         "TypeScript",
-        "PowerShell",
-        "Azure OpenAI"
+        "Copilot Studio",
+        "DLP Guardrails"
       ],
       "id": 2,
       "filesChanged": 1200,
@@ -283,7 +284,7 @@
       "section": "Power Platform"
     },
     {
-      "title": "E-Procurement System & Oracle PowerBiz ERP Integration",
+      "title": "E-Procurement & Oracle ERP Integration (Dataverse)",
       "metrics": [
         {
           "value": "5",
@@ -301,14 +302,14 @@
       "mergedDate": "2025-11-20",
       "commits": 620,
       "statusColor": "purple",
-      "description": "End-to-end purchasing suite — Purchase Requisition with LOA routing, Purchase Orders with multi-vendor splits, CIP Capex Budget Control, and SPQQ Supplier Portal. Bidirectional Oracle PowerBiz ERP sync via Custom Connectors and REST APIs.",
+      "description": "End-to-end procurement suite on Dataverse — Purchase Requisition with LOA routing, Purchase Orders with multi-vendor splits, CIP Capex Budget Control, and SPQQ Supplier Portal. Bidirectional Oracle PowerBiz ERP sync via Custom Connectors with C# Dataverse Plugins enforcing business rules at the data layer. Field Security Profiles on PO amounts and vendor financial data.",
       "tech": [
-        "Power Apps Canvas",
         "Dataverse",
-        "Power Automate",
-        "Oracle ERP",
+        "C# Plugins",
+        "Power Apps Canvas",
         "Custom Connectors",
-        "REST APIs"
+        "Oracle ERP",
+        "Power Automate"
       ],
       "id": 3,
       "filesChanged": 1800,
@@ -335,12 +336,11 @@
       "mergedDate": "2025-08-15",
       "commits": 340,
       "statusColor": "green",
-      "description": "Automated business request processing across Microsoft Forms, Power Automate, SharePoint, Power BI, and Teams. Replaced manual triage with intelligent routing — 80% manual task reduction, 90% data accuracy.",
+      "description": "Automated business request processing with intelligent routing — replaced manual triage with Power Automate approval flows, real-time Power BI dashboards, and Teams notifications. 80% manual task reduction, 90% data accuracy through typed Dataverse columns replacing legacy free-text fields.",
       "tech": [
+        "Dataverse",
         "Power Apps",
-        "Microsoft Forms",
         "Power Automate",
-        "SharePoint",
         "Power BI",
         "Teams"
       ],
@@ -402,12 +402,12 @@
       "mergedDate": "2025-03-01",
       "commits": 210,
       "statusColor": "orange",
-      "description": "AI-powered case classification using AI Builder for automated SOP categorization. 50% classification accuracy boost, 65% faster handling time, 120+ SOP categories automated.",
+      "description": "AI-powered case classification on Dataverse using AI Builder for automated SOP categorization. Typed Choice columns replace free-text categorization — 50% classification accuracy boost, 65% faster handling time, 120+ SOP categories automated with consistent data quality.",
       "tech": [
-        "Power Apps Canvas",
+        "Dataverse",
         "AI Builder",
-        "Power Automate",
-        "SharePoint"
+        "Power Apps Canvas",
+        "Power Automate"
       ],
       "id": 6,
       "filesChanged": 540,
@@ -416,7 +416,7 @@
       "section": "Power Platform"
     },
     {
-      "title": "Rebate Approval System — Isolated Compliance",
+      "title": "Rebate Approval — Dataverse Isolated Compliance",
       "metrics": [
         {
           "value": "5",
@@ -434,12 +434,13 @@
       "mergedDate": "2025-01-20",
       "commits": 180,
       "statusColor": "purple",
-      "description": "Standalone corporate approval workflow engineered with complete database isolation for security and audit compliance. Multi-tier approval matrix with immutable audit trails and segregated data architecture.",
+      "description": "Standalone corporate approval workflow on Dataverse with complete Business Unit isolation for security and audit compliance. Multi-tier approval matrix with Field Security Profiles on financial data, immutable audit trails via Dataverse Auditing, and C# Plugins enforcing segregation of duties at the data layer.",
       "tech": [
-        "Power Apps",
         "Dataverse",
-        "Power Automate",
-        "SharePoint"
+        "C# Plugins",
+        "Power Apps",
+        "Field Security",
+        "Power Automate"
       ],
       "id": 8,
       "filesChanged": 460,

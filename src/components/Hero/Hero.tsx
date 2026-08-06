@@ -74,7 +74,10 @@ export const Hero: React.FC<HeroProps> = ({ developer }) => {
 
           {/* CTA — hover bounce draws clicks */}
           <div className={`${styles.heroActions} stagger-children`}>
-            <a href="#case-study" className="btn btn-primary hover-bounce">
+            <a href="/resume.html" className="btn btn-primary hover-bounce" target="_blank" rel="noopener noreferrer">
+              📄 Download Resume
+            </a>
+            <a href="#case-study" className="btn btn-outline hover-bounce">
               View Case Study
             </a>
             <a href="#contact" className="btn btn-outline hover-bounce">

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from "../../styles/theme";
+import styles from "./PortfolioShowcase.module.css";
 
 // ============================================================
 // Types matching portfolio-apps.json schema
@@ -155,24 +156,30 @@ export const PortfolioShowcase: React.FC = () => {
           marginBottom: theme.spacing.lg,
         }}
       >
-        {data.portfolioSummary.totalDeployedApps} Deployed ·{" "}
-        {data.portfolioSummary.totalApplications} Total Applications —{" "}
-        catalogued across {data.portfolioSummary.departmentsCovered.length}{" "}
-        departments with{" "}
+        {data.portfolioSummary.totalDeployedApps} Production Apps ·{' '}
+        {data.portfolioSummary.totalApplications} Applications Catalogued —{' '}
+        across {data.portfolioSummary.departmentsCovered.length}{' '}
+        departments with{' '}
         {data.portfolioSummary.totalCanvasScreens.toLocaleString()}+ Canvas
         screens, {data.portfolioSummary.totalTypeScriptComponents}+ reusable components,
-        and {data.portfolioSummary.totalAIAgents}+ domain-specific AI agents.
+        and {data.portfolioSummary.totalAIAgents}+ AI automation agents.
+      </p>
+      <p
+        style={{
+          color: theme.colors.text.muted,
+          fontSize: '0.8125rem',
+          marginBottom: theme.spacing.xl,
+          lineHeight: 1.6,
+        }}
+      >
+        📋 {data.portfolioSummary.totalApplications} legacy Lotus Domino forms catalogued across 28+ departments.{' '}
+        {data.portfolioSummary.totalDeployedApps} are live in production on Power Apps;{' '}
+        remaining are in pipeline — built, verified, or awaiting UAT deployment.
       </p>
 
       {/* Summary Stats Bar */}
       <div
-        className="portfolio-stats-grid"
-        style={{
-          display: "flex",
-          gap: "16px",
-          flexWrap: "wrap",
-          marginBottom: theme.spacing.xl,
-        }}
+        className={`${styles.statsGrid} portfolio-stats-grid`}
       >
         {[
           {
@@ -194,21 +201,16 @@ export const PortfolioShowcase: React.FC = () => {
         ].map(({ label, value }) => (
           <div
             key={label}
-            className="portfolio-stats-card"
+            className={`${styles.statsCard} portfolio-stats-card`}
             style={{
-              padding: "12px 20px",
               backgroundColor: theme.colors.bg.secondary,
               border: `1px solid ${theme.colors.border.default}`,
               borderRadius: theme.borderRadius.md,
-              textAlign: "center",
-              minWidth: "130px",
             }}
           >
             <div
-              className="stat-value"
+              className={styles.statsValue}
               style={{
-                fontSize: theme.typography.fontSize["2xl"],
-                fontWeight: 800,
                 color: theme.colors.accent.blue,
                 fontFamily: theme.typography.fontFamily.mono,
               }}
@@ -216,14 +218,8 @@ export const PortfolioShowcase: React.FC = () => {
               {value}
             </div>
             <div
-              className="stat-label"
-              style={{
-                fontSize: "0.6875rem",
-                color: theme.colors.text.muted,
-                textTransform: "uppercase",
-                letterSpacing: "0.05em",
-                marginTop: "4px",
-              }}
+              className={styles.statsLabel}
+              style={{ color: theme.colors.text.muted }}
             >
               {label}
             </div>
@@ -233,13 +229,9 @@ export const PortfolioShowcase: React.FC = () => {
 
       {/* Department Tabs */}
       <div
-        className="portfolio-dept-tabs"
+        className={`${styles.deptTabs} portfolio-dept-tabs`}
         style={{
-          display: "flex",
-          gap: "4px",
-          flexWrap: "wrap",
           marginBottom: theme.spacing.xl,
-          padding: "4px",
           backgroundColor: theme.colors.bg.secondary,
           borderRadius: theme.borderRadius.md,
           border: `1px solid ${theme.colors.border.default}`,
@@ -554,6 +546,30 @@ export const PortfolioShowcase: React.FC = () => {
                         }}
                       >
                         🔄 {project.legacySystem}
+                      </div>
+                    )}
+
+                    {/* Gallery Thumbnail */}
+                    {project.galleryAssets?.thumbnail && (
+                      <img
+                        src={`${import.meta.env.BASE_URL}${project.galleryAssets.thumbnail}`}
+                        alt={`${project.title} screenshot`}
+                        className={styles.projectThumbnail}
+                        loading="lazy"
+                      />
+                    )}
+
+                    {/* Gallery Screenshots */}
+                    {project.galleryAssets?.screenshots && project.galleryAssets.screenshots.length > 1 && (
+                      <div className={styles.projectThumbnails}>
+                        {project.galleryAssets.screenshots.map((shot, idx) => (
+                          <img
+                            key={idx}
+                            src={`${import.meta.env.BASE_URL}${shot}`}
+                            alt={`${project.title} screen ${idx + 1}`}
+                            loading="lazy"
+                          />
+                        ))}
                       </div>
                     )}
                   </div>

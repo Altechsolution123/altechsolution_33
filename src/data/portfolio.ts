@@ -24,7 +24,7 @@ export const personalInfo = {
   title:
     "Enterprise Power Platform & Dynamics 365 Solution Architect | Dataverse Data Architect | ALM & AI Engineering Lead",
   tagline:
-    "Dataverse-first architecture · 16 production Power Apps · Enterprise ALM · 28+ departments modernized",
+    "Dataverse-first architecture · 16 production Power Apps · C# Plugins & PCF Controls · Enterprise ALM · 28+ departments modernized",
   bio: `Enterprise Power Platform & Dynamics 365 Solution Architect with 7+ years of service delivery, operations leadership, and dual-track transformation experience spanning low-code Canvas Apps, code-first React/TypeScript platforms, and Dataverse data architecture.
 
 Proven track record leading large-scale digital modernization at a publicly listed Malaysian conglomerate (palm oil, oleochemicals, property) — cataloguing 361 legacy Lotus Domino forms and migrating them into a modern Microsoft 365 environment. The architecture follows a deliberate two-phase strategy: Phase 1 deployed 16 production Canvas Apps using SharePoint Online strictly as an interim staging data store to eliminate $960K/year in premium licensing during rapid migration (28+ department sites), while Phase 2 — the Dataverse Migration Blueprint — defines the enterprise-grade target architecture with full relational data modeling, Business Unit hierarchy, Security Role inheritance, Field Security Profiles, polymorphic lookups, and managed solution ALM. SharePoint Online is explicitly a migration staging layer, not a production data architecture.
@@ -316,253 +316,71 @@ export const dataverseMigrationBlueprint = {
 
 export const metrics: StatMetric[] = [
   {
-    label: "Production Power Apps",
+    label: "Production Apps",
     value: 16,
     icon: "rocket",
     suffix: "",
   },
   {
-    label: "Legacy Forms Catalogued",
+    label: "Forms Catalogued",
     value: 361,
     icon: "database",
     suffix: "",
   },
   {
-    label: "License Cost Avoided",
-    value: 960,
-    icon: "dollar",
-    suffix: "K/yr",
+    label: "Departments",
+    value: 28,
+    icon: "layout",
+    suffix: "+",
   },
-  { label: "SLA Compliance", value: 98, icon: "shield", suffix: "+%" },
+  {
+    label: "Years Experience",
+    value: 9,
+    icon: "code",
+    suffix: "+",
+  },
 ];
 
 export const allSkills: Skill[] = [
-  // Low-Code / No-Code
-  {
-    name: "Power Apps Canvas",
-    level: 4 as SkillLevel,
-    category: "platform" as SkillCategory,
-  },
-  {
-    name: "Power Automate",
-    level: 4 as SkillLevel,
-    category: "platform" as SkillCategory,
-  },
-  {
-    name: "Dataverse",
-    level: 4 as SkillLevel,
-    category: "platform" as SkillCategory,
-  },
-  {
-    name: "Dataverse Plugins (C#)",
-    level: 4 as SkillLevel,
-    category: "platform" as SkillCategory,
-  },
-  {
-    name: "PCF Controls",
-    level: 4 as SkillLevel,
-    category: "platform" as SkillCategory,
-  },
-  {
-    name: "Model-Driven Apps",
-    level: 4 as SkillLevel,
-    category: "platform" as SkillCategory,
-  },
-  {
-    name: "Power BI",
-    level: 4 as SkillLevel,
-    category: "platform" as SkillCategory,
-  },
-  {
-    name: "AI Builder",
-    level: 4 as SkillLevel,
-    category: "platform" as SkillCategory,
-  },
-  {
-    name: "Power Pages",
-    level: 4 as SkillLevel,
-    category: "platform" as SkillCategory,
-  },
-  {
-    name: "Microsoft Forms",
-    level: 4 as SkillLevel,
-    category: "platform" as SkillCategory,
-  },
-  // Languages & Frameworks
-  {
-    name: "Power Fx",
-    level: 4 as SkillLevel,
-    category: "language" as SkillCategory,
-  },
-  {
-    name: "TypeScript",
-    level: 4 as SkillLevel,
-    category: "language" as SkillCategory,
-  },
-  {
-    name: "YAML / PA YAML",
-    level: 4 as SkillLevel,
-    category: "language" as SkillCategory,
-  },
-  {
-    name: "JavaScript",
-    level: 4 as SkillLevel,
-    category: "language" as SkillCategory,
-  },
-  {
-    name: "HTML/CSS",
-    level: 4 as SkillLevel,
-    category: "language" as SkillCategory,
-  },
-  {
-    name: "SQL",
-    level: 3 as SkillLevel,
-    category: "language" as SkillCategory,
-  },
-  {
-    name: "Python",
-    level: 3 as SkillLevel,
-    category: "language" as SkillCategory,
-  },
-  {
-    name: "C#",
-    level: 4 as SkillLevel,
-    category: "language" as SkillCategory,
-  },
-  // Frontend
-  {
-    name: "React",
-    level: 4 as SkillLevel,
-    category: "framework" as SkillCategory,
-  },
-  {
-    name: "Vite",
-    level: 4 as SkillLevel,
-    category: "framework" as SkillCategory,
-  },
-  {
-    name: "shadcn/ui",
-    level: 4 as SkillLevel,
-    category: "framework" as SkillCategory,
-  },
-  // Integrations & APIs
-  {
-    name: "SharePoint Online",
-    level: 4 as SkillLevel,
-    category: "cloud" as SkillCategory,
-  },
-  {
-    name: "REST APIs",
-    level: 4 as SkillLevel,
-    category: "cloud" as SkillCategory,
-  },
-  {
-    name: "Custom Connectors",
-    level: 4 as SkillLevel,
-    category: "cloud" as SkillCategory,
-  },
-  {
-    name: "ERP Integration",
-    level: 4 as SkillLevel,
-    category: "cloud" as SkillCategory,
-  },
-  {
-    name: "GxP Compliance",
-    level: 4 as SkillLevel,
-    category: "cloud" as SkillCategory,
-  },
-  {
-    name: "Microsoft Entra ID",
-    level: 4 as SkillLevel,
-    category: "cloud" as SkillCategory,
-  },
-  // DevOps & ALM
-  {
-    name: "GitHub Copilot",
-    level: 4 as SkillLevel,
-    category: "tool" as SkillCategory,
-  },
-  {
-    name: "Git / GitHub",
-    level: 4 as SkillLevel,
-    category: "tool" as SkillCategory,
-  },
-  {
-    name: "GitHub Actions",
-    level: 4 as SkillLevel,
-    category: "tool" as SkillCategory,
-  },
-  {
-    name: "Azure Pipelines",
-    level: 3 as SkillLevel,
-    category: "tool" as SkillCategory,
-  },
-  {
-    name: "PAC CLI",
-    level: 4 as SkillLevel,
-    category: "tool" as SkillCategory,
-  },
-  {
-    name: "PnP PowerShell",
-    level: 4 as SkillLevel,
-    category: "tool" as SkillCategory,
-  },
-  {
-    name: "ALM / DevOps",
-    level: 4 as SkillLevel,
-    category: "tool" as SkillCategory,
-  },
-  // Lark / Collaboration
-  {
-    name: "Lark Base",
-    level: 4 as SkillLevel,
-    category: "platform" as SkillCategory,
-    secondary: true,
-  },
-  {
-    name: "Lark Automation",
-    level: 4 as SkillLevel,
-    category: "platform" as SkillCategory,
-    secondary: true,
-  },
-  {
-    name: "Lark Chat",
-    level: 4 as SkillLevel,
-    category: "platform" as SkillCategory,
-    secondary: true,
-  },
-  // AI & Copilot
-  {
-    name: "Copilot Studio",
-    level: 4 as SkillLevel,
-    category: "platform" as SkillCategory,
-  },
-  {
-    name: "AI Agent Architecture",
-    level: 4 as SkillLevel,
-    category: "platform" as SkillCategory,
-  },
+  // Platform
+  { name: "Power Apps", level: 5 as SkillLevel, category: "platform" as SkillCategory },
+  { name: "Power Automate", level: 5 as SkillLevel, category: "platform" as SkillCategory },
+  { name: "Dataverse", level: 4 as SkillLevel, category: "platform" as SkillCategory },
+  { name: "Power Pages", level: 4 as SkillLevel, category: "platform" as SkillCategory },
+  // Languages
+  { name: "Power Fx", level: 5 as SkillLevel, category: "language" as SkillCategory },
+  { name: "TypeScript", level: 5 as SkillLevel, category: "language" as SkillCategory },
+  { name: "JavaScript", level: 4 as SkillLevel, category: "language" as SkillCategory },
+  { name: "HTML/CSS", level: 4 as SkillLevel, category: "language" as SkillCategory },
+  { name: "C#", level: 3 as SkillLevel, category: "language" as SkillCategory },
+  { name: "SQL", level: 3 as SkillLevel, category: "language" as SkillCategory },
+  { name: "Python", level: 3 as SkillLevel, category: "language" as SkillCategory },
+  // Frameworks
+  { name: "React", level: 4 as SkillLevel, category: "framework" as SkillCategory },
+  { name: "shadcn/ui", level: 4 as SkillLevel, category: "framework" as SkillCategory },
+  { name: "Jotai", level: 3 as SkillLevel, category: "framework" as SkillCategory },
+  { name: "TanStack Query", level: 3 as SkillLevel, category: "framework" as SkillCategory },
+  // Tools
+  { name: "Vite", level: 4 as SkillLevel, category: "tool" as SkillCategory },
+  { name: "Git", level: 4 as SkillLevel, category: "tool" as SkillCategory },
+  { name: "GitHub Actions", level: 4 as SkillLevel, category: "tool" as SkillCategory },
+  { name: "Azure Pipelines", level: 3 as SkillLevel, category: "tool" as SkillCategory },
+  { name: "PAC CLI", level: 4 as SkillLevel, category: "tool" as SkillCategory },
+  { name: "PnP PowerShell", level: 4 as SkillLevel, category: "tool" as SkillCategory },
+  // Cloud
+  { name: "Azure", level: 3 as SkillLevel, category: "cloud" as SkillCategory },
+  { name: "M365", level: 5 as SkillLevel, category: "cloud" as SkillCategory },
+  { name: "SharePoint Online", level: 5 as SkillLevel, category: "cloud" as SkillCategory },
+  { name: "Microsoft Entra ID", level: 4 as SkillLevel, category: "cloud" as SkillCategory },
+  { name: "Dynamics 365", level: 3 as SkillLevel, category: "cloud" as SkillCategory },
   // Leadership
-  {
-    name: "Team Leadership & Operations",
-    level: 4 as SkillLevel,
-    category: "leadership" as SkillCategory,
-  },
-  {
-    name: "Process Mapping & Optimization",
-    level: 4 as SkillLevel,
-    category: "leadership" as SkillCategory,
-  },
-  {
-    name: "Cross-Border Project Execution",
-    level: 4 as SkillLevel,
-    category: "leadership" as SkillCategory,
-  },
-  {
-    name: "Stakeholder Alignment",
-    level: 4 as SkillLevel,
-    category: "leadership" as SkillCategory,
-  },
+  { name: "Enterprise Solution Architecture", level: 4 as SkillLevel, category: "leadership" as SkillCategory },
+  { name: "Power Platform Governance", level: 4 as SkillLevel, category: "leadership" as SkillCategory },
+  { name: "AI-Enabled Delivery & Automation", level: 4 as SkillLevel, category: "leadership" as SkillCategory },
+  { name: "SLA & Operations Management (98%+)", level: 4 as SkillLevel, category: "leadership" as SkillCategory },
+  { name: "Team Scaling (9→34+)", level: 4 as SkillLevel, category: "leadership" as SkillCategory },
+  { name: "Stakeholder & Client Engagement", level: 4 as SkillLevel, category: "leadership" as SkillCategory },
+  { name: "SOW & Budget Oversight", level: 4 as SkillLevel, category: "leadership" as SkillCategory },
 ];
 
 export const typedProjects: Project[] = [

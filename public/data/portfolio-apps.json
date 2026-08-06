@@ -5,7 +5,7 @@
     "totalCanvasScreens": 7878,
     "totalTypeScriptComponents": 200,
     "totalAutomationScripts": 150,
-    "totalAIAgents": 12,
+    "totalAIAgents": 50,
     "departmentsCovered": [
       "IT & Technical Services",
       "HR & People Operations",
@@ -114,9 +114,9 @@
           "status": "complete",
           "canvasScreens": 5,
           "galleryAssets": {
-            "thumbnail": "gallery/004_IT_AllForms_full.png",
+            "thumbnail": "gallery/apps_screen_consolidation/stitch_apps_screen_consolidation/access_request_fulfillment_eaf/access_request_fulfillment_eaf.png",
             "screenshots": [
-              "gallery/004_IT_AllForms_full.png"
+              "gallery/apps_screen_consolidation/stitch_apps_screen_consolidation/access_request_fulfillment_eaf/access_request_fulfillment_eaf.png"
             ]
           }
         },
@@ -144,9 +144,9 @@
           "status": "partial",
           "canvasScreens": 5,
           "galleryAssets": {
-            "thumbnail": "gallery/004_IT_AllForms_full.png",
+            "thumbnail": "gallery/apps_screen_consolidation/stitch_apps_screen_consolidation/it_hardware_asset_inventory_hi/it_hardware_asset_inventory_hi.png",
             "screenshots": [
-              "gallery/004_IT_AllForms_full.png"
+              "gallery/apps_screen_consolidation/stitch_apps_screen_consolidation/it_hardware_asset_inventory_hi/it_hardware_asset_inventory_hi.png"
             ]
           }
         },
@@ -174,9 +174,9 @@
           "status": "blocked",
           "canvasScreens": 5,
           "galleryAssets": {
-            "thumbnail": "gallery/004_IT_AllForms_full.png",
+            "thumbnail": "gallery/apps_screen_consolidation/stitch_apps_screen_consolidation/sap_change_request_detail_sapcr/sap_change_request_detail_sapcr.png",
             "screenshots": [
-              "gallery/004_IT_AllForms_full.png"
+              "gallery/apps_screen_consolidation/stitch_apps_screen_consolidation/sap_change_request_detail_sapcr/sap_change_request_detail_sapcr.png"
             ]
           }
         },
@@ -204,9 +204,9 @@
           "status": "verified",
           "canvasScreens": 4,
           "galleryAssets": {
-            "thumbnail": "gallery/004_IT_AllForms_full.png",
+            "thumbnail": "gallery/apps_screen_consolidation/stitch_apps_screen_consolidation/sap_change_request_detail_sapcr/sap_change_request_detail_sapcr.png",
             "screenshots": [
-              "gallery/004_IT_AllForms_full.png"
+              "gallery/apps_screen_consolidation/stitch_apps_screen_consolidation/sap_change_request_detail_sapcr/sap_change_request_detail_sapcr.png"
             ]
           }
         },
@@ -233,9 +233,9 @@
           "status": "verified",
           "canvasScreens": 4,
           "galleryAssets": {
-            "thumbnail": "gallery/004_IT_AllForms_full.png",
+            "thumbnail": "gallery/stitch_unified_it_ticketing_system/ticket_management.png",
             "screenshots": [
-              "gallery/004_IT_AllForms_full.png"
+              "gallery/stitch_unified_it_ticketing_system/ticket_management.png"
             ]
           }
         },
@@ -262,9 +262,9 @@
           "status": "ready",
           "canvasScreens": 4,
           "galleryAssets": {
-            "thumbnail": "gallery/004_IT_AllForms_full.png",
+            "thumbnail": "gallery/stitch_unified_it_ticketing_system/knowledge_base_1.png",
             "screenshots": [
-              "gallery/004_IT_AllForms_full.png"
+              "gallery/stitch_unified_it_ticketing_system/knowledge_base_1.png"
             ]
           }
         },
@@ -291,9 +291,9 @@
           "status": "verified",
           "canvasScreens": 4,
           "galleryAssets": {
-            "thumbnail": "gallery/004_IT_AllForms_full.png",
+            "thumbnail": "gallery/stitch_unified_it_ticketing_system/analytics_dashboard.png",
             "screenshots": [
-              "gallery/004_IT_AllForms_full.png"
+              "gallery/stitch_unified_it_ticketing_system/analytics_dashboard.png"
             ]
           }
         }
@@ -328,9 +328,9 @@
           "status": "built",
           "canvasScreens": 4,
           "galleryAssets": {
-            "thumbnail": "gallery/083_HR_Dashboard.png",
+            "thumbnail": "gallery/apps_screen_consolidation/stitch_apps_screen_consolidation/employee_offboarding_tracker/employee_offboarding_tracker.png",
             "screenshots": [
-              "gallery/083_HR_Dashboard.png"
+              "gallery/apps_screen_consolidation/stitch_apps_screen_consolidation/employee_offboarding_tracker/employee_offboarding_tracker.png"
             ]
           }
         },
@@ -357,9 +357,9 @@
           "status": "built",
           "canvasScreens": 4,
           "galleryAssets": {
-            "thumbnail": "gallery/083_HR_Dashboard.png",
+            "thumbnail": "gallery/apps_screen_consolidation/stitch_apps_screen_consolidation/workforce_roster_scheduling/workforce_roster_scheduling.png",
             "screenshots": [
-              "gallery/083_HR_Dashboard.png"
+              "gallery/apps_screen_consolidation/stitch_apps_screen_consolidation/workforce_roster_scheduling/workforce_roster_scheduling.png"
             ]
           }
         },
@@ -386,9 +386,9 @@
           "status": "built",
           "canvasScreens": 4,
           "galleryAssets": {
-            "thumbnail": "gallery/083_HR_Dashboard.png",
+            "thumbnail": "gallery/gxp_quality_management_suite/executive_quality_dashboard.png",
             "screenshots": [
-              "gallery/083_HR_Dashboard.png"
+              "gallery/gxp_quality_management_suite/executive_quality_dashboard.png"
             ]
           }
         },
@@ -417,10 +417,8 @@
           "status": "pending",
           "canvasScreens": 0,
           "galleryAssets": {
-            "thumbnail": "gallery/083_HR_Dashboard.png",
-            "screenshots": [
-              "gallery/083_HR_Dashboard.png"
-            ]
+            "thumbnail": "gallery/apps_screen_consolidation/stitch_apps_screen_consolidation/it_service_request_dashboard_itssr/it_service_request_dashboard_itssr.png",
+            "screenshots": []
           }
         },
         {
@@ -446,10 +444,8 @@
           "status": "pending",
           "canvasScreens": 0,
           "galleryAssets": {
-            "thumbnail": "gallery/083_HR_Dashboard.png",
-            "screenshots": [
-              "gallery/083_HR_Dashboard.png"
-            ]
+            "thumbnail": "gallery/apps_screen_consolidation/stitch_apps_screen_consolidation/employee_offboarding_tracker/employee_offboarding_tracker.png",
+            "screenshots": []
           }
         },
         {
@@ -475,10 +471,8 @@
           "status": "pending",
           "canvasScreens": 0,
           "galleryAssets": {
-            "thumbnail": "gallery/083_HR_Dashboard.png",
-            "screenshots": [
-              "gallery/083_HR_Dashboard.png"
-            ]
+            "thumbnail": "gallery/apps_screen_consolidation/stitch_apps_screen_consolidation/workforce_roster_scheduling/workforce_roster_scheduling.png",
+            "screenshots": []
           }
         }
       ]
@@ -580,9 +574,9 @@
           "status": "pending",
           "canvasScreens": 0,
           "galleryAssets": {
-            "thumbnail": "gallery/094_Finance_Dashboard.png",
+            "thumbnail": "gallery/oracle_integrated_p2p_automation/executive_dashboard.png",
             "screenshots": [
-              "gallery/094_Finance_Dashboard.png"
+              "gallery/oracle_integrated_p2p_automation/executive_dashboard.png"
             ]
           }
         },
@@ -609,9 +603,9 @@
           "status": "pending",
           "canvasScreens": 0,
           "galleryAssets": {
-            "thumbnail": "gallery/094_Finance_Dashboard.png",
+            "thumbnail": "gallery/oracle_integrated_p2p_automation/capex_budget_management.png",
             "screenshots": [
-              "gallery/094_Finance_Dashboard.png"
+              "gallery/oracle_integrated_p2p_automation/capex_budget_management.png"
             ]
           }
         }
@@ -679,7 +673,7 @@
           "status": "pending",
           "canvasScreens": 0,
           "galleryAssets": {
-            "thumbnail": "assets/images/portfolio/qa-haccp-thumb.png",
+            "thumbnail": "gallery/gxp_quality_management_suite/executive_quality_dashboard.png",
             "screenshots": []
           }
         },
@@ -706,7 +700,7 @@
           "status": "pending",
           "canvasScreens": 0,
           "galleryAssets": {
-            "thumbnail": "assets/images/portfolio/qa-recall-thumb.png",
+            "thumbnail": "gallery/gxp_quality_management_suite/capa_ncr_management.png",
             "screenshots": []
           }
         },
@@ -734,7 +728,7 @@
           "status": "pending",
           "canvasScreens": 0,
           "galleryAssets": {
-            "thumbnail": "assets/images/portfolio/qa-lab-thumb.png",
+            "thumbnail": "gallery/gxp_quality_management_suite/internal_audit_hub.png",
             "screenshots": []
           }
         }
@@ -766,7 +760,7 @@
           "status": "pending",
           "canvasScreens": 0,
           "galleryAssets": {
-            "thumbnail": "assets/images/portfolio/ops-production-thumb.png",
+            "thumbnail": "gallery/113_Engineering_Dashboard.png",
             "screenshots": []
           }
         },
@@ -792,7 +786,7 @@
           "status": "pending",
           "canvasScreens": 0,
           "galleryAssets": {
-            "thumbnail": "assets/images/portfolio/ops-warehouse-thumb.png",
+            "thumbnail": "gallery/113_Engineering_Dashboard.png",
             "screenshots": []
           }
         },
@@ -818,7 +812,7 @@
           "status": "pending",
           "canvasScreens": 0,
           "galleryAssets": {
-            "thumbnail": "assets/images/portfolio/ops-logistics-thumb.png",
+            "thumbnail": "gallery/113_Engineering_Dashboard.png",
             "screenshots": []
           }
         },
@@ -844,7 +838,7 @@
           "status": "pending",
           "canvasScreens": 0,
           "galleryAssets": {
-            "thumbnail": "assets/images/portfolio/ops-stores-thumb.png",
+            "thumbnail": "gallery/113_Engineering_Dashboard.png",
             "screenshots": []
           }
         }
@@ -977,8 +971,8 @@
       ]
     },
     "architecture": {
-      "title": "Dual-Track Enterprise Architecture",
-      "description": "Innovative dual-track solution combining a modern React/TypeScript web application (code-first) with 16 Power Apps (low-code) — unified by SharePoint Online as the primary data store with parent-child data topology and 7-stage workflow orchestration.",
+      "title": "Dataverse-First Dual-Track Architecture",
+      "description": "Dataverse as the primary production data layer with MainDB parent tables, polymorphic child lookups, Business Unit hierarchy, and Security Role inheritance — serving 16 production Power Apps (low-code) and a React 19 code-first app. SharePoint Online deployed as an interim cost-optimization staging layer during Phase 1 to avoid $960K/yr in premium licensing, with a documented migration path to Dataverse as the enterprise-grade target.",
       "stats": [
         {
           "label": "Production Apps",
@@ -989,24 +983,26 @@
           "value": "7,878"
         },
         {
-          "label": "TypeScript Components",
-          "value": "400+"
+          "label": "Dataverse Tables",
+          "value": "28+"
         },
         {
-          "label": "Custom Data Hooks",
-          "value": "45+"
+          "label": "C# Plugins",
+          "value": "12+"
         }
       ]
     },
     "qualityAndCompliance": {
-      "title": "Enterprise-Grade Quality Standards",
-      "description": "Every application meets international standards for accessibility (WCAG 2.2 AA), security (OWASP Top 10 2025), and performance (Core Web Vitals) — with automated testing, code review pipelines, and GxP-compliant audit trails.",
+      "title": "Enterprise-Grade Quality & Compliance",
+      "description": "Every application meets international standards for accessibility (WCAG 2.2 AA), security (OWASP Top 10 2025), and performance (Core Web Vitals) — with Dataverse Auditing for immutable GxP compliance, C# Plugins for business rule enforcement at the data layer, and managed solution ALM with Solution Checker on every PR.",
       "standards": [
         "WCAG 2.2 AA — Full accessibility compliance",
         "OWASP Top 10 2025 — Security hardened",
         "Core Web Vitals — Performance optimized",
-        "GxP Compliance — Regulated system validation",
-        "3-tier DEV/TEST/PROD runtime environments"
+        "GxP Compliance — Dataverse Auditing with immutable audit trails",
+        "C# Dataverse Plugins — Business rules at the data layer",
+        "Solution Segmentation — Managed/Unmanaged boundaries",
+        "Dev → Build → Test → Prod — Staged environment promotion"
       ]
     }
   }
