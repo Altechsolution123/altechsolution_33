@@ -155,10 +155,10 @@ export const PortfolioShowcase: React.FC = () => {
           marginBottom: theme.spacing.lg,
         }}
       >
-        {data.portfolioSummary.totalApplications}+ business applications
+        {data.portfolioSummary.totalDeployedApps} Deployed ·{" "}
+        {data.portfolioSummary.totalApplications} Total Applications —{" "}
         catalogued across {data.portfolioSummary.departmentsCovered.length}{" "}
-        departments — {data.portfolioSummary.totalDeployedApps} production apps
-        deployed with{" "}
+        departments with{" "}
         {data.portfolioSummary.totalCanvasScreens.toLocaleString()}+ Canvas
         screens, {data.portfolioSummary.totalTypeScriptComponents}+ reusable components,
         and {data.portfolioSummary.totalAIAgents}+ domain-specific AI agents.

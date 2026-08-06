@@ -59,7 +59,7 @@ const en: TranslationDict = {
     jumpTo: "Jump To",
   },
   status: {
-    powerPlatformArchitect: "Power Platform Architect",
+    powerPlatformArchitect: "Enterprise Power Platform & Dataverse Architect",
     availableMessage: "Open to senior architecture & AI leadership roles",
     branch: "main",
     lastUpdated: "Last updated",

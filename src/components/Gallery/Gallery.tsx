@@ -199,6 +199,9 @@ const Lightbox: React.FC<{
         alt={image.alt}
         className={styles.lightboxImage}
         onClick={(e) => e.stopPropagation()}
+        onError={(e) => {
+          (e.target as HTMLImageElement).style.display = "none";
+        }}
       />
       <div className={styles.lightboxCaption}>{image.alt}</div>
       <div className={styles.lightboxHint}>Press ESC to close</div>
@@ -294,6 +297,9 @@ const Gallery: React.FC = () => {
                   alt={img.alt}
                   loading="lazy"
                   className={styles.galleryItemImage}
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = "none";
+                  }}
                 />
                 <div className={styles.galleryItemBody}>
                   <span className={styles.galleryItemCategory}>
