@@ -23,7 +23,7 @@ npm run preview  # Preview production build
 
 ## Live
 
-https://portfolio-kappa-six-3t5lqnvutu.vercel.app
+https://altechsolutionportofilo.vercel.app/
 
 ## Project Structure
 
