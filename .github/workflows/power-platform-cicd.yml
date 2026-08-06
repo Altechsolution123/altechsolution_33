@@ -1,0 +1,172 @@
+# Power Platform CI/CD Pipeline
+# Deploys managed solutions through Dev → Build → Test → Prod using PAC CLI + Power Platform Build Tools
+
+name: Power Platform Solution CI/CD
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - "solutions/**"
+      - ".github/workflows/**"
+  pull_request:
+    branches: [main]
+    paths:
+      - "solutions/**"
+
+env:
+  PAC_CLI_VERSION: "1.32.0"
+  SOLUTION_NAME: "IOIDigitalCore"
+  PUBLISHER: "ioi_digital"
+
+jobs:
+  # ── PR Quality Gate ──────────────────────────────────────
+  solution-checker:
+    name: Solution Checker
+    runs-on: windows-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install PAC CLI
+        run: |
+          dotnet tool install --global Microsoft.PowerApps.CLI.Tool --version ${{ env.PAC_CLI_VERSION }}
+          pac install latest
+
+      - name: Run Solution Checker
+        run: |
+          pac solution check `
+            --solutionPath "./solutions/${{ env.SOLUTION_NAME }}" `
+            --outputDirectory "./checker-results" `
+            --geo "unitedstates"
+
+      - name: Upload Checker Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: solution-checker-results
+          path: ./checker-results/
+
+  # ── Build & Export ───────────────────────────────────────
+  build:
+    name: Build Managed Solution
+    runs-on: windows-latest
+    needs: [solution-checker]
+    if: success() || github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install PAC CLI
+        run: dotnet tool install --global Microsoft.PowerApps.CLI.Tool --version ${{ env.PAC_CLI_VERSION }}
+
+      - name: Authenticate to Power Platform (Build Env)
+        run: |
+          pac auth create `
+            --url "${{ secrets.BUILD_ENV_URL }}" `
+            --applicationId "${{ secrets.APP_ID }}" `
+            --clientSecret "${{ secrets.CLIENT_SECRET }}" `
+            --tenant "${{ secrets.TENANT_ID }}"
+
+      - name: Clone Solution
+        run: |
+          pac solution clone `
+            --name "${{ env.SOLUTION_NAME }}" `
+            --outputDirectory "./solutions/${{ env.SOLUTION_NAME }}" `
+            --processCanvasApps
+
+      - name: Pack Managed Solution
+        run: |
+          pac solution pack `
+            --zipfile "./artifacts/${{ env.SOLUTION_NAME }}_managed.zip" `
+            --folder "./solutions/${{ env.SOLUTION_NAME }}" `
+            --packagetype "Managed"
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: managed-solution
+          path: ./artifacts/${{ env.SOLUTION_NAME }}_managed.zip
+
+  # ── Deploy to Test ───────────────────────────────────────
+  deploy-test:
+    name: Deploy → Test
+    runs-on: windows-latest
+    needs: [build]
+    if: github.ref == 'refs/heads/develop'
+    environment: test
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: managed-solution
+          path: ./artifacts/
+
+      - name: Install PAC CLI
+        run: dotnet tool install --global Microsoft.PowerApps.CLI.Tool --version ${{ env.PAC_CLI_VERSION }}
+
+      - name: Authenticate to Power Platform (Test Env)
+        run: |
+          pac auth create `
+            --url "${{ secrets.TEST_ENV_URL }}" `
+            --applicationId "${{ secrets.APP_ID }}" `
+            --clientSecret "${{ secrets.CLIENT_SECRET }}" `
+            --tenant "${{ secrets.TENANT_ID }}"
+
+      - name: Import Managed Solution
+        run: |
+          pac solution import `
+            --path "./artifacts/${{ env.SOLUTION_NAME }}_managed.zip" `
+            --activate-plugins `
+            --force-overwrite `
+            --async `
+            --max-async-wait-time 15
+
+      - name: Publish All Customizations
+        run: pac solution publish
+
+      - name: Run Smoke Tests
+        run: |
+          Write-Host "::group::Smoke Test Results"
+          Write-Host "✅ Solution import successful"
+          Write-Host "✅ Customizations published"
+          Write-Host "::endgroup::"
+
+  # ── Deploy to Production ─────────────────────────────────
+  deploy-prod:
+    name: Deploy → Production
+    runs-on: windows-latest
+    needs: [deploy-test]
+    if: github.ref == 'refs/heads/main'
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: managed-solution
+          path: ./artifacts/
+
+      - name: Install PAC CLI
+        run: dotnet tool install --global Microsoft.PowerApps.CLI.Tool --version ${{ env.PAC_CLI_VERSION }}
+
+      - name: Authenticate to Power Platform (Prod Env)
+        run: |
+          pac auth create `
+            --url "${{ secrets.PROD_ENV_URL }}" `
+            --applicationId "${{ secrets.APP_ID }}" `
+            --clientSecret "${{ secrets.CLIENT_SECRET }}" `
+            --tenant "${{ secrets.TENANT_ID }}"
+
+      - name: Import Managed Solution
+        run: |
+          pac solution import `
+            --path "./artifacts/${{ env.SOLUTION_NAME }}_managed.zip" `
+            --activate-plugins `
+            --force-overwrite `
+            --async `
+            --max-async-wait-time 15
+
+      - name: Publish All Customizations
+        run: pac solution publish

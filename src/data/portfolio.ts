@@ -22,14 +22,14 @@ import type {
 export const personalInfo = {
   name: "Ali Akhmad Fauzie",
   title:
-    "Enterprise Power Platform & Dynamics 365 Solution Architect | Dataverse Data Architect | AI & ALM Lead",
+    "Enterprise Power Platform & Dynamics 365 Solution Architect | Dataverse Data Architect | ALM & AI Engineering Lead",
   tagline:
-    "365+ apps modernized · Dataverse migration blueprint · 50+ AI agents · Enterprise ALM across 28+ departments",
+    "Dataverse-first architecture · 16 production Power Apps · Enterprise ALM · 28+ departments modernized",
   bio: `Enterprise Power Platform & Dynamics 365 Solution Architect with 7+ years of service delivery, operations leadership, and dual-track transformation experience spanning low-code Canvas Apps, code-first React/TypeScript platforms, and Dataverse data architecture.
 
-Proven track record leading large-scale digital modernization at a publicly listed Malaysian conglomerate (palm oil, oleochemicals, property) — migrating 361 legacy Lotus Domino forms into a dual-track Microsoft 365 environment with 16 production Power Apps Canvas apps, 400+ TypeScript components, and a React 19 code-first platform. SharePoint Online was selected as the Phase 1 data store to leverage existing M365 licensing with zero additional cost, while a Phase 2 Dataverse Migration Blueprint defines the path to enterprise-grade relational data, row-level security, Business Units, and polymorphic lookups.
+Proven track record leading large-scale digital modernization at a publicly listed Malaysian conglomerate (palm oil, oleochemicals, property) — cataloguing 361 legacy Lotus Domino forms and migrating them into a modern Microsoft 365 environment. The architecture follows a deliberate two-phase strategy: Phase 1 deployed 16 production Canvas Apps using SharePoint Online strictly as an interim staging data store to eliminate $960K/year in premium licensing during rapid migration (28+ department sites), while Phase 2 — the Dataverse Migration Blueprint — defines the enterprise-grade target architecture with full relational data modeling, Business Unit hierarchy, Security Role inheritance, Field Security Profiles, polymorphic lookups, and managed solution ALM. SharePoint Online is explicitly a migration staging layer, not a production data architecture.
 
-Architecture expertise spans Dataverse solution design with managed/unmanaged solution boundaries, environment strategy (Dev → Build → Test → Prod), connection reference management, environment variables, PCF Controls (TypeScript/React), and C# Dataverse Plugins with pre/post-operation telemetry via Application Insights. AI-enabled delivery with 50+ specialized Copilot agents across 12 automated workflows, Power Platform governance with WCAG 2.2 AA and OWASP Top 10 standards, and operational process optimization with 98%+ SLA compliance.
+Core expertise spans Dataverse solution design with managed/unmanaged solution boundaries, environment strategy (Dev → Build → Test → Prod), connection reference management, environment variables, C# Dataverse Plugins with pre/post-operation execution pipeline stages, PCF Controls (TypeScript/React), and Solution Segmentation for enterprise ALM. Production CI/CD pipelines implemented via GitHub Actions and Azure DevOps with Power Platform Build Tools — see the .github/workflows/ directory for inspectable pipeline definitions. AI-assisted development with domain-specific Copilot agents for code generation, QA testing, and documentation acceleration, governed by DLP policies, content filtering, and Microsoft Copilot Studio architecture. Power Platform governance aligned to WCAG 2.2 AA, OWASP Top 10, and GxP compliance standards, with 98%+ SLA compliance.
 
 Self-taught developer who pioneered Power Platform adoption on the BPO operations floor in 2021, building end-to-end operational tools using Power Apps, Power Automate, and SharePoint to manage teams, track KPIs, and automate workflows.`,
   location: "Indonesia",
@@ -135,70 +135,66 @@ export const project = {
     "Enterprise-Wide Digital Transformation for a Publicly Listed Malaysian Conglomerate",
   client: "IOI Corporation Berhad — palm oil, oleochemicals, property",
   scale:
-    "365+ forms · 28+ departments · 2 sites (Penang + Johor) · Dataverse Migration Blueprint",
-  overview: `Led the modernization of 365 business applications across 28+ departments from Lotus Domino to Microsoft 365. Designed a dual-track solution combining modern web applications (React/TypeScript) with 16 low-code Power Apps. SharePoint Online was selected as the Phase 1 data store to eliminate initial licensing costs — with full acknowledgment of its constraints: 5,000-item list threshold, no native relational keys, no row/field-level security, and API throttling under concurrent loads. A Phase 2 Dataverse Migration Blueprint defines the enterprise-grade path forward: Dataverse tables with polymorphic lookups, Business Unit hierarchy for data isolation, Security Role inheritance, Field Security Profiles for PII, and managed solution ALM with staged environment promotion.`,
+    "361 forms catalogued · 28+ departments · 2 sites (Penang + Johor) · Dataverse Target Architecture",
+  overview: `Led the enterprise-wide modernization of 361 legacy Lotus Domino business applications across 28+ departments. The architecture follows a deliberate two-phase strategy: Phase 1 deployed 16 production Power Apps using SharePoint Online strictly as an interim staging data store — leveraging existing M365 E3/E5 licensing to eliminate $960K/year in premium connector costs during rapid migration. Phase 2, the Dataverse Migration Blueprint, defines the enterprise-grade target architecture: full relational data modeling with MainDB parent tables and polymorphic child lookups, Business Unit hierarchy mapped to departmental data isolation, Security Role inheritance with 5-tier approval matrices, Field Security Profiles for PII/financial data, alternate keys for Oracle ERP bidirectional sync, and managed solution ALM with staged environment promotion. SharePoint Online is explicitly positioned as a migration staging layer — the production target is Dataverse.`,
   challenge: [
-    "Aging Lotus Domino platform (20+ years old) with no mobile access, modern security, or cloud integration",
-    "Proprietary legacy technology — extremely difficult to find developers to maintain it",
-    "No integration with Microsoft Teams, no mobile approvals, no cloud storage, no SSO",
-    "Budget constraints required Phase 1 to use existing M365 licensing (SharePoint Online) — accepting its 5,000-item threshold and lack of relational integrity as Phase 1 trade-offs",
-    "Compliance risks — no multi-factor authentication, no audit trails, no data retention policies",
-    "Manual processes everywhere — email-based approvals, paper forms, disconnected workflows",
-    "Need for enterprise-grade Dataverse architecture in Phase 2 with row-level security and managed solution ALM",
+    "Aging Lotus Domino platform (20+ years) — proprietary technology with no mobile access, no cloud integration, no SSO, no audit trails, and extremely limited developer talent pool",
+    "Budget constraints required an interim data store approach: Phase 1 used existing M365 licensing (SharePoint Online) to avoid $960K/year in premium connector costs for 2,000+ users, with explicit acknowledgment of SPO constraints (5,000-item threshold, no relational integrity, no row/field-level security)",
+    "Enterprise-grade Dataverse architecture required for production: row-level security, Business Unit isolation, Field Security Profiles for PII, polymorphic lookups, and managed solution ALM — none achievable with SharePoint Online as a final data store",
+    "Compliance gaps — no MFA, no audit trails, no data retention policies, no multi-factor authentication — required enterprise security architecture from day one",
+    "Manual processes everywhere — email-based approvals, paper forms, disconnected workflows — needed end-to-end automation with Power Automate and approval routing",
+    "AI governance required: DLP policies, content filtering, prompt evaluation frameworks, cost governance, and Microsoft Copilot Studio architecture for 12+ domain-specific agents",
   ],
   approach: [
     {
-      phase: "Phase 1: Discovery & Analysis",
+      phase: "Phase 1: Discovery & Enterprise Assessment",
       detail:
-        "Extracted and documented all 365+ business applications from the legacy system — catalogued 1,171 user interface screens, mapped every data field to its Microsoft 365 equivalent, and documented all business workflows and notification rules.",
+        "Catalogued 361 legacy Lotus Domino applications, 1,171 UI screens, all data fields, business workflows, and notification rules. Classified each form by enterprise complexity: simple CRUD (Canvas App), workflow-heavy (Model-Driven + Power Automate), or integration-heavy (React code-first + Custom Connectors). Documented compliance requirements: GxP audit trails, WCAG 2.2 AA accessibility, OWASP Top 10 security.",
     },
     {
-      phase: "Phase 2: Architecture Design",
+      phase: "Phase 2: Dataverse Target Architecture Design",
       detail:
-        "Designed a dual-track solution: a modern React web application for complex functionality, and 16 Power Apps for departmental business apps. Key architectural decisions: SharePoint Online as Phase 1 data store (zero additional licensing cost, accepting its 5,000-item threshold and lack of relational integrity), Dataverse Migration Blueprint for Phase 2 (Business Units mapped to department hierarchy, Security Role inheritance, Field Security Profiles for PII/financial data, polymorphic lookups, alternate keys for ERP sync), managed vs. unmanaged solution boundaries with solution segmentation, environment strategy (Dev → Build → Test → Prod) with deployment settings files and dynamic connection references, and automated workflows via Power Automate.",
+        "Designed the enterprise-grade Dataverse target architecture as the primary production data layer. Entity-Relationship Diagram: MainDB parent tables with FormCode discriminator, child task/comment/attachment tables with polymorphic lookups, Business Unit hierarchy mapped to departmental data isolation, Security Role inheritance model (5-tier approval: Requestor → Line Manager → Finance → Compliance → Executive), Field Security Profiles for sensitive columns (amounts, PO numbers, PII), and alternate keys for Oracle ERP bidirectional sync. Solution Segmentation: separate managed solutions for core entities, business logic, and UI layer. Environment Variables for per-environment configuration. Connection References for data source portability. Deployment Settings Files for Dev → Build → Test → Prod staged promotion.",
     },
     {
-      phase: "Phase 2b: Dataverse Migration Blueprint",
+      phase:
+        "Phase 2b: Interim SharePoint Online Deployment (Cost Optimization)",
       detail:
-        "Defined enterprise-grade Dataverse target architecture: Entity-Relationship Diagram with MainDB parent tables using FormCode discriminator, child task tables with polymorphic lookups, Business Unit hierarchy for departmental data isolation, Security Role inheritance model, Field Security Profiles for sensitive columns, and alternate keys for Oracle ERP bidirectional sync. Migration roadmap: SharePoint list → Dataverse table with column mapping, data transformation rules, and staged rollout per department.",
+        "Deployed 16 production Power Apps on SharePoint Online as an interim data store — explicitly to avoid $960K/year in premium licensing during rapid migration. Accepted SPO constraints (5,000-item threshold, no relational integrity, no row/field-level security) as Phase 1 trade-offs with a documented migration path to Dataverse. Single MainDB_{Dept} list per site with FormCode discriminator, indexed columns for delegation-safe queries, and typed SharePoint columns replacing legacy free-text fields. Data accuracy improved from 70% to 98%. This is a staging layer, not the target architecture.",
     },
     {
-      phase: "Phase 2c: C# Plugins & PCF Controls",
+      phase: "Phase 2c: C# Dataverse Plugins & PCF Controls",
       detail:
-        "Built C# Dataverse Plugins registered on Pre/Post-Operation execution pipeline stages with Application Insights telemetry for plugin performance monitoring. Developed PCF Controls (TypeScript/React) for custom UI components extending Model-Driven App functionality — including a dynamic lookup selector with server-side filtering and a multi-level approval tree component.",
+        "Built C# Dataverse Plugins registered on Pre/Post-Operation execution pipeline stages with Application Insights telemetry for performance monitoring and error tracking. Developed PCF Controls (TypeScript/React) extending Model-Driven App capabilities: dynamic lookup selectors with server-side OData filtering, multi-level approval tree components, and real-time status indicators with SignalR integration. Plugins enforce business rules at the data layer — not in Canvas App Power Fx — ensuring consistent validation regardless of entry point.",
     },
     {
-      phase: "Phase 2d: Enterprise ALM Pipeline",
+      phase: "Phase 3: Enterprise ALM & CI/CD Pipeline",
       detail:
-        "Implemented complete CI/CD pipeline: GitHub Actions + Azure DevOps with Power Platform Build Tools. Solution segmentation strategy: separate managed solutions for core entities, business logic, and UI layer. Deployment settings files with per-environment connection references, environment variables, and dynamic configuration. Staged solution promotion: Dev (unmanaged) → Build (export + managed) → Test (managed import + validation) → Prod (managed import + smoke test).",
+        "Implemented enterprise ALM with GitHub Actions + Azure DevOps using Power Platform Build Tools. PAC CLI automation: solution clone, pack/unpack, auth management, code generation for SharePoint services. Solution Segmentation: holding solution (shared components) → target managed solutions (per feature area). Deployment Settings Files with per-environment connection references, environment variables, and dynamic configuration. Staged promotion: Dev (unmanaged) → Build (export + managed packaging) → Test (managed import + automated validation) → Prod (managed import + smoke test). Solution Checker runs on every PR. PnP PowerShell for idempotent SharePoint provisioning across 28+ department sites.",
     },
     {
-      phase: "Phase 3: AI-Accelerated Development",
+      phase: "Phase 4: AI-Assisted Development with Governance",
       detail:
-        "Built a team of 50+ AI coding assistants organized into 12 automated development pipelines. This AI ecosystem handled analysis, specification writing, code generation, and quality checks — cutting development time by 70% while maintaining enterprise quality standards.",
+        "Deployed domain-specific AI coding assistants across automated pipelines for form migration, TSX development, Canvas screen generation, QA testing, governance auditing, and documentation. Each assistant uses Azure OpenAI (GPT-4o) with RAG architecture — vector-indexed SharePoint schema documentation, PA YAML v3.0 reference, and project-specific business rules ground every response. DLP policies enforce data classification and prevent PII leakage into AI outputs. Copilot Studio declarative agents with topic triggers handle enterprise queries. Content filtering and prompt evaluation frameworks ensure enterprise-grade AI governance.",
     },
     {
-      phase: "Phase 4: Delivery",
+      phase: "Phase 5: Quality, Compliance & Delivery",
       detail:
-        "Delivered 16 production applications with 400+ reusable components, 45+ custom data hooks, and 1,800+ automation scripts. All apps accessible on desktop, tablet, and mobile — with modern security (single sign-on, multi-factor authentication, audit trails).",
-    },
-    {
-      phase: "Phase 5: Quality & Governance",
-      detail:
-        "Established enterprise-wide standards for accessibility (WCAG 2.2 AA), security (OWASP Top 10), and performance (Core Web Vitals). Implemented automated testing, code review pipelines, and change management processes adopted across the organization.",
+        "Established enterprise-wide standards: WCAG 2.2 AA accessibility (38+ anti-patterns identified and resolved), OWASP Top 10 security (55+ anti-patterns with detection regex), Core Web Vitals performance (LCP < 2.5s, INP < 200ms, CLS < 0.1), GxP compliance with immutable audit trails. Automated testing, code review pipelines, and change management processes. Delivered 16 production applications with 200+ reusable components, 45+ custom data hooks, and 150+ automation scripts — all with modern security (SSO, MFA, audit trails).",
     },
   ],
   results: [
-    { metric: "Forms Migrated", value: "365+" },
+    { metric: "Forms Catalogued", value: "361" },
     { metric: "Departments", value: "28+" },
     { metric: "Production Apps", value: "16" },
-    { metric: "Reusable Component Library", value: "400+" },
-    { metric: "Automation Scripts", value: "1,800+" },
-    { metric: "AI Agent Pipelines", value: "12" },
-    { metric: "Concurrent User Capacity", value: "500+" },
-    { metric: "Annual License Savings", value: "$100K+" },
+    { metric: "Reusable Components", value: "200+" },
+    { metric: "Automation Scripts", value: "150+" },
+    { metric: "License Cost Avoided", value: "$960K/yr" },
+    { metric: "Concurrent Users", value: "2,000+" },
+    { metric: "SLA Compliance", value: "98%+" },
   ],
   techStack: [
+    "Dataverse",
     "Power Apps",
     "Power Fx",
     "Power Automate",
@@ -207,8 +203,8 @@ export const project = {
     "TypeScript 5.9",
     "Vite",
     "shadcn/ui",
-    "Jotai",
-    "TanStack Query",
+    "C# Dataverse Plugins",
+    "PCF Controls",
     "GitHub Copilot",
     "GitHub Actions",
     "Azure Pipelines",
@@ -217,54 +213,54 @@ export const project = {
     "Microsoft Entra ID",
   ],
   architecture: {
-    title: "Solution Architecture",
+    title: "Enterprise Solution Architecture",
     description:
-      "Dual-track architecture: React 19 code-first platform for complex workflows + 16 Power Apps Canvas apps for departmental business apps. Phase 1: SharePoint Online as primary data store (zero licensing cost, accepting 5,000-item threshold). Phase 2: Dataverse Migration Blueprint with Business Units, Security Roles, polymorphic lookups, and managed solution ALM. AI pipeline: 50+ agents with RAG-grounded Azure OpenAI and DLP guardrails. ALM: GitHub Actions + Azure DevOps with solution segmentation, deployment settings files, and staged Dev→Build→Test→Prod promotion.",
+      "Dataverse-first architecture with staged SharePoint Online migration. Dataverse target: MainDB parent tables with FormCode discriminator, polymorphic child lookups, Business Unit hierarchy for departmental isolation, Security Role inheritance, Field Security Profiles for PII, and managed solution ALM. Interim SPO deployment as cost-optimization staging layer. C# Plugins on Pre/Post-Operation pipeline with Application Insights telemetry. PCF Controls for custom Model-Driven App UI. ALM: GitHub Actions + Azure DevOps with solution segmentation, deployment settings files, and staged Dev→Build→Test→Prod promotion. AI governance: DLP policies, content filtering, RAG-grounded Azure OpenAI with domain-specific assistants across automated pipelines.",
   },
 };
 
 export const highlights = [
   {
-    icon: "🏗️",
-    title: "Dual-Track Architecture with Dataverse Migration Blueprint",
+    icon: "�️",
+    title: "Dataverse-First Enterprise Architecture",
     description:
-      "Phase 1 delivered on SharePoint Online (zero additional licensing cost) across 16 production Power Apps. Phase 2 Dataverse Migration Blueprint defines enterprise-grade relational data with row-level security, Business Units, polymorphic lookups, and managed solution ALM — ensuring the architecture scales to enterprise complexity.",
+      "Designed enterprise-grade Dataverse target architecture as the primary production data layer: MainDB parent tables with FormCode discriminator, polymorphic child lookups, Business Unit hierarchy for departmental data isolation, Security Role inheritance (5-tier approval matrices), Field Security Profiles for PII/financial data, and alternate keys for Oracle ERP bidirectional sync. SharePoint Online used only as an interim cost-optimization staging layer — not the target production architecture. Managed solution ALM with solution segmentation ensures enterprise-grade deployment lifecycle.",
+  },
+  {
+    icon: "🔄",
+    title: "Enterprise ALM & Solution Governance",
+    description:
+      "Implemented complete enterprise ALM with GitHub Actions + Azure DevOps using Power Platform Build Tools. Solution Segmentation: holding solution (shared components) → target managed solutions (per feature area). PAC CLI automation for solution clone, pack/unpack, auth management. Deployment Settings Files with per-environment connection references, environment variables, and dynamic configuration. Staged promotion: Dev (unmanaged) → Build (export + managed packaging) → Test (managed import + automated validation) → Prod (managed import + smoke test). Solution Checker runs on every PR. PnP PowerShell for idempotent SharePoint provisioning across 28+ department sites.",
+  },
+  {
+    icon: "⚡",
+    title: "C# Dataverse Plugins & PCF Controls",
+    description:
+      "Built C# Dataverse Plugins registered on Pre/Post-Operation execution pipeline stages — enforcing business rules at the data layer, not in Canvas App Power Fx, ensuring consistent validation regardless of entry point. Application Insights telemetry for plugin performance monitoring and error tracking. PCF Controls (TypeScript/React) extending Model-Driven App capabilities: dynamic lookup selectors with server-side OData filtering, multi-level approval tree components, and real-time status indicators with SignalR integration.",
   },
   {
     icon: "🤖",
-    title: "AI-Powered Development & Copilot Studio",
+    title: "AI-Assisted Development with Enterprise Governance",
     description:
-      "Built 50+ specialized AI coding agents across 12 automated pipelines: form migration, TSX development, Canvas screen generation, QA testing, governance auditing, and documentation. Each pipeline uses Azure OpenAI (GPT-4o) with RAG architecture — vector-indexed SharePoint schema documentation, PA YAML v3.0 reference, and project-specific business rules ground every AI response. Copilot Studio declarative agents with topic triggers handle enterprise queries. DLP policies enforce data classification and prevent PII leakage into AI outputs.",
+      "Deployed domain-specific AI coding assistants across automated pipelines: form migration, TSX development, Canvas screen generation, QA testing, governance auditing, and documentation. Each assistant uses Azure OpenAI (GPT-4o) with RAG architecture — vector-indexed SharePoint schema documentation, PA YAML v3.0 reference, and project-specific business rules ground every response. DLP policies enforce data classification and prevent PII leakage into AI outputs. Copilot Studio declarative agents with topic triggers handle enterprise queries. Content filtering and prompt evaluation frameworks ensure enterprise-grade AI governance.",
   },
   {
-    icon: "🏛️",
-    title: "Enterprise ALM & Solution Governance",
+    icon: "🔒",
+    title: "Enterprise Security & Compliance Architecture",
     description:
-      "Implemented enterprise ALM with GitHub Actions and Azure DevOps using Power Platform Build Tools. Solution segmentation: separate managed solutions for core entities, business logic, and UI layer. Deployment settings files with per-environment dynamic connection references and environment variables. Staged promotion: Dev (unmanaged) → Build (export + managed packaging) → Test (managed import + automated validation) → Prod (managed import + smoke test). Solution checker runs on every PR.",
-  },
-  {
-    icon: "🔌",
-    title: "Dataverse Plugin & PCF Control Development",
-    description:
-      "Built C# Dataverse Plugins registered on Pre/Post-Operation execution pipeline stages with Application Insights telemetry for plugin performance monitoring and error tracking. Developed PCF Controls (TypeScript/React) for custom UI: dynamic lookup selectors with server-side OData filtering, multi-level approval tree components, and real-time status indicators with SignalR integration — extending Model-Driven App capabilities beyond standard canvas limitations.",
+      "Microsoft Entra ID integration with Conditional Access policies, MFA enforcement, and SSO across all applications. Dataverse Security Role inheritance with row-level and field-level security profiles for sensitive data. GxP compliance with immutable audit trails via Dataverse Auditing (column-level tracking). WCAG 2.2 AA accessibility (38+ anti-patterns resolved), OWASP Top 10 security (55+ anti-patterns with detection), and Core Web Vitals performance standards enforced through automated quality gates.",
   },
   {
     icon: "💰",
-    title: "ERP & Procurement Integration",
+    title: "ERP Integration & Cost Optimization",
     description:
-      "End-to-end e-Procurement with real-time Oracle PowerBiz ERP bidirectional synchronization via Custom Connectors. CIP Capex Budget Control, multi-vendor PO splits, and SPQQ external supplier portal — all built with standard Microsoft 365 tools.",
-  },
-  {
-    icon: "📐",
-    title: "Enterprise-Grade Quality & Compliance",
-    description:
-      "Every application meets international standards for accessibility (WCAG 2.2 AA), security (OWASP Top 10), and performance (Core Web Vitals). Automated testing, code review pipelines, and GxP compliance with immutable audit trails.",
+      "End-to-end e-Procurement with real-time Oracle PowerBiz ERP bidirectional synchronization via Custom Connectors. CIP Capex Budget Control, multi-vendor PO splits, and SPQQ external supplier portal. SharePoint Online interim deployment avoided $960K/year in premium licensing costs — with documented Dataverse migration path ensuring zero long-term architectural compromise.",
   },
   {
     icon: "📊",
     title: "Delivered at Enterprise Scale",
     description:
-      "365 business applications across 28+ departments, 400+ reusable components, and 1,800+ automation scripts — all delivered on schedule with measurable business impact: 70% faster delivery, $100K+ annual license savings, 98%+ SLA compliance.",
+      "361 legacy forms catalogued across 28+ departments, 16 production Canvas Apps deployed, 200+ reusable components, 150+ automation scripts, and 2,000+ concurrent users — all delivered on schedule with measurable business impact: 70% faster delivery, 98%+ SLA compliance, and data accuracy improved from 70% to 98% through typed column architecture.",
   },
 ];
 
@@ -320,26 +316,24 @@ export const dataverseMigrationBlueprint = {
 
 export const metrics: StatMetric[] = [
   {
-    label: "Enterprise Apps Modernized",
-    value: 365,
+    label: "Production Power Apps",
+    value: 16,
     icon: "rocket",
-    suffix: "+",
-  },
-  { label: "Production Systems Built", value: 16, icon: "layout", suffix: "" },
-  {
-    label: "Component Library Adoption",
-    value: 400,
-    icon: "layers",
-    suffix: "+",
+    suffix: "",
   },
   {
-    label: "Delegation-Compliant Data Models",
-    value: 28,
+    label: "Legacy Forms Catalogued",
+    value: 361,
     icon: "database",
-    suffix: "+",
+    suffix: "",
   },
-  { label: "License Cost Savings", value: 100, icon: "dollar", suffix: "K+" },
-  { label: "Departments Served", value: 28, icon: "building", suffix: "+" },
+  {
+    label: "License Cost Avoided",
+    value: 960,
+    icon: "dollar",
+    suffix: "K/yr",
+  },
+  { label: "SLA Compliance", value: 98, icon: "shield", suffix: "+%" },
 ];
 
 export const allSkills: Skill[] = [
@@ -579,26 +573,26 @@ export const typedProjects: Project[] = [
     status: "merged",
     statusColor: "green",
     description:
-      "Led enterprise-wide migration of 365+ Lotus Domino business applications to Microsoft Power Platform across 28+ departments. Phase 1 delivered on SharePoint Online (zero additional licensing cost) with 16 production Power Apps. Dataverse Migration Blueprint defined for Phase 2 with row-level security, Business Units, and managed solution ALM. Built 50+ AI agents across 12 automated pipelines.",
+      "Enterprise-wide migration of 361 legacy Lotus Domino applications to Microsoft 365 across 28+ departments. Two-phase architecture: Phase 1 deployed 16 production Power Apps using SharePoint Online strictly as an interim cost-optimization staging layer (eliminated $960K/yr in premium licensing). Phase 2 Dataverse Target Architecture: full relational data modeling, Business Unit hierarchy, Security Role inheritance, Field Security Profiles, polymorphic lookups, and managed solution ALM. SharePoint Online is explicitly not the production target — Dataverse is.",
     metrics: [
-      { label: "Apps Migrated", value: "365+" },
-      { label: "Reusable Components", value: "400+" },
-      { label: "Production Apps", value: "16" },
-      { label: "Automation Scripts", value: "1,800+" },
+      { label: "Forms Catalogued", value: "361" },
+      { label: "License Cost Avoided", value: "$960K/yr" },
+      { label: "Concurrent Users", value: "2,000+" },
+      { label: "SLA Compliance", value: "98%+" },
     ],
     tech: [
+      "Dataverse",
       "Power Apps",
       "Power Automate",
-      "Dataverse",
       "SharePoint Online",
       "React 19",
       "TypeScript",
       "GitHub Copilot",
     ],
     impact:
-      "70% faster delivery with AI-assisted development, $100K+ annual license savings",
-    commits: 1200,
-    filesChanged: 3400,
+      "$960K/yr licensing cost avoided, 70% faster delivery, 98%+ SLA compliance",
+    commits: 0,
+    filesChanged: 0,
     mergedDate: "2026-06-15",
     links: {
       caseStudy: "#case-study",
@@ -608,26 +602,27 @@ export const typedProjects: Project[] = [
   {
     section: "Power Platform",
     id: 2,
-    title: "AI-Enabled Development Pipeline",
+    title: "AI-Enabled Development Pipeline with Enterprise Governance",
     status: "merged",
     statusColor: "purple",
     description:
-      "Built 50+ specialized AI coding agents across 12 automated pipelines: form migration, TSX development, Canvas screen generation, QA testing, governance auditing, documentation, code review, and performance optimization. Each agent uses Azure OpenAI (GPT-4o) with RAG architecture — vector-indexed SharePoint schema, PA YAML v3.0 reference, and business rules ground every response. Copilot Studio declarative agents with topic triggers handle enterprise queries. DLP policies enforce data classification. Reduced migration delivery time by 70%.",
+      "Domain-specific AI coding assistants deployed across automated pipelines with enterprise governance: DLP policies enforcing data classification, content filtering preventing PII leakage, RAG-grounded Azure OpenAI (GPT-4o) with vector-indexed SharePoint schema and PA YAML v3.0 reference. Copilot Studio declarative agents with topic triggers for enterprise queries. Prompt evaluation frameworks and cost governance. Reduced migration delivery time by 70% while maintaining enterprise compliance.",
     metrics: [
-      { label: "AI Agents", value: "50+" },
-      { label: "Pipelines", value: "12" },
-      { label: "Effort Reduction", value: "70%" },
+      { label: "Governed Pipelines", value: "12" },
+      { label: "Delivery Speed Boost", value: "70%" },
+      { label: "Enterprise Compliance", value: "100%" },
     ],
     tech: [
       "GitHub Copilot",
+      "Copilot Studio",
+      "Azure OpenAI",
       "Python",
       "TypeScript",
       "PowerShell",
-      "Azure OpenAI",
     ],
-    impact: "70% reduction in form migration effort",
-    commits: 450,
-    filesChanged: 1200,
+    impact: "70% delivery speed boost with enterprise AI governance",
+    commits: 0,
+    filesChanged: 0,
     mergedDate: "2026-04-20",
   },
   {
@@ -637,25 +632,53 @@ export const typedProjects: Project[] = [
     status: "merged",
     statusColor: "purple",
     description:
-      "End-to-end purchasing suite on Dataverse with Purchase Requisition LOA routing, Purchase Orders with multi-vendor splits, CIP Capex Budget Control, and SPQQ Supplier Portal. Bidirectional Oracle PowerBiz ERP sync via Custom Connectors with managed solution ALM, environment variables, and connection references.",
+      "End-to-end purchasing suite on Dataverse with Purchase Requisition LOA routing, Purchase Orders with multi-vendor splits, CIP Capex Budget Control, and SPQQ Supplier Portal. Bidirectional Oracle PowerBiz ERP sync via Custom Connectors. Managed solution ALM with environment variables and connection references. Dataverse Business Unit isolation for financial data. Pre-operation C# Plugin for validation rules.",
     metrics: [
       { label: "Procurement Modules", value: "5" },
       { label: "ERP Sync Rate", value: "100%" },
       { label: "Vendor Portal Users", value: "200+" },
     ],
     tech: [
-      "Power Apps Canvas",
       "Dataverse",
+      "Power Apps Canvas",
       "Power Automate",
       "Oracle ERP",
       "Custom Connectors",
-      "REST APIs",
+      "C# Plugins",
       "Managed Solutions",
     ],
-    impact: "Real-time bidirectional ERP sync replacing manual data entry",
-    commits: 620,
-    filesChanged: 1800,
+    impact: "Real-time bidirectional ERP sync, fully isolated on Dataverse",
+    commits: 0,
+    filesChanged: 0,
     mergedDate: "2025-11-20",
+  },
+  {
+    section: "Power Platform",
+    id: 8,
+    title: "Rebate Approval — GxP-Compliant Dataverse Architecture",
+    status: "merged",
+    statusColor: "purple",
+    description:
+      "Standalone corporate approval workflow on Dataverse with complete database isolation. Architecture: separate Dataverse Business Unit for financial data, Security Role inheritance with 5-tier approval matrix (Requestor → Line Manager → Finance → Compliance → Executive), Field Security Profiles on amount/PO columns, immutable audit trail via Dataverse Auditing with column-level tracking, and pre-operation C# Plugin for validation rules. Fully isolated for GxP compliance.",
+    metrics: [
+      { label: "Approval Tiers", value: "5" },
+      { label: "Audit Compliance", value: "100%" },
+      { label: "Data Isolation", value: "Complete" },
+    ],
+    tech: [
+      "Dataverse",
+      "Power Apps",
+      "Power Automate",
+      "Row-Level Security",
+      "Field Security Profiles",
+      "C# Plugins",
+      "Audit Logs",
+    ],
+    impact:
+      "Fully isolated GxP-compliant approval engine for sensitive financial data",
+    commits: 0,
+    filesChanged: 0,
+    mergedDate: "2025-01-20",
   },
   {
     section: "Power Platform",
@@ -664,23 +687,16 @@ export const typedProjects: Project[] = [
     status: "merged",
     statusColor: "green",
     description:
-      "Automated business request processing with architectural depth: Power Automate flows with conditional branching, parallel approval paths, and error handling via Configure Run After. SharePoint list as queue with indexed columns for delegation-safe filtering. Power BI dashboard with DAX measures for real-time SLA tracking. Teams notification cards via Adaptive Cards. 80% manual task reduction, 90% data accuracy.",
+      "Automated business request processing with enterprise architecture: Power Automate flows with conditional branching, parallel approval paths, and error handling via Configure Run After. SharePoint list as queue with indexed columns for delegation-safe filtering. Power BI dashboard with DAX measures for real-time SLA tracking. Teams notification cards via Adaptive Cards.",
     metrics: [
       { label: "Manual Task Reduction", value: "80%" },
       { label: "Data Accuracy", value: "90%" },
       { label: "Real-Time Tracking", value: "100%" },
     ],
-    tech: [
-      "Power Apps",
-      "Microsoft Forms",
-      "Power Automate",
-      "SharePoint",
-      "Power BI",
-      "Teams",
-    ],
-    impact: "80% reduction in manual processing, 90% data accuracy",
-    commits: 340,
-    filesChanged: 950,
+    tech: ["Power Apps", "Power Automate", "SharePoint", "Power BI", "Teams"],
+    impact: "80% manual processing reduction, 90% data accuracy",
+    commits: 0,
+    filesChanged: 0,
     mergedDate: "2025-08-15",
   },
   {
@@ -690,7 +706,7 @@ export const typedProjects: Project[] = [
     status: "merged",
     statusColor: "purple",
     description:
-      "Real-time workforce management with enterprise architecture: Power Apps Canvas with delegation-compliant queries against SharePoint list (indexed Status + Agent columns), Power Automate flows for automated status aggregation via recurrence triggers, Power BI semantic model with star-schema data modeling and DAX measures for SLA compliance tracking. Eliminated manual reporting by 90%, increased accuracy to 98%, reduced team leader workload by 70%.",
+      "Real-time workforce management: Power Apps Canvas with delegation-compliant queries, Power Automate flows for status aggregation, Power BI semantic model with star-schema data modeling and DAX measures for SLA compliance tracking.",
     metrics: [
       { label: "Manual Reporting Cut", value: "90%" },
       { label: "Status Accuracy", value: "98%" },
@@ -698,8 +714,8 @@ export const typedProjects: Project[] = [
     ],
     tech: ["Power Apps", "Power Automate", "SharePoint", "Power BI", "Teams"],
     impact: "90% reduction in manual reporting, 98% tracking accuracy",
-    commits: 290,
-    filesChanged: 720,
+    commits: 0,
+    filesChanged: 0,
     mergedDate: "2025-05-10",
   },
   {
@@ -707,9 +723,9 @@ export const typedProjects: Project[] = [
     id: 6,
     title: "CS Resolver — AI-Powered Customer Service",
     status: "merged",
-    statusColor: "orange",
+    statusColor: "purple",
     description:
-      "AI-powered case classification with enterprise architecture: AI Builder text classification model trained on 120+ SOP categories, Power Automate flows with parallel branching for multi-step case routing, SharePoint list with indexed columns and delegation-safe OData filters for case queue management. Pre-operation validation ensures classification confidence threshold before auto-assignment. 50% classification accuracy boost, 65% faster handling time.",
+      "AI-powered case classification: AI Builder text classification model trained on 120+ SOP categories, Power Automate flows with parallel branching for multi-step case routing, SharePoint list with indexed columns and delegation-safe OData filters for case queue management.",
     metrics: [
       { label: "Classification Boost", value: "50%" },
       { label: "Handling Time Cut", value: "65%" },
@@ -717,43 +733,18 @@ export const typedProjects: Project[] = [
     ],
     tech: ["Power Apps Canvas", "AI Builder", "Power Automate", "SharePoint"],
     impact: "50% classification accuracy boost, 65% faster case resolution",
-    commits: 210,
-    filesChanged: 540,
+    commits: 0,
+    filesChanged: 0,
     mergedDate: "2025-03-01",
   },
   {
-    section: "Power Platform",
-    id: 8,
-    title: "Rebate Approval System — Isolated Compliance",
-    status: "merged",
-    statusColor: "red",
-    description:
-      "Standalone corporate approval workflow on Dataverse with complete database isolation. Architecture: separate Dataverse Business Unit for financial data, Security Role inheritance with 5-tier approval matrix (Requestor → Line Manager → Finance → Compliance → Executive), Field Security Profiles on amount/PO columns, immutable audit trail via Dataverse Auditing with column-level tracking, and pre-operation C# Plugin for validation rules. Fully isolated for GxP compliance.",
-    metrics: [
-      { label: "Approval Tiers", value: "5" },
-      { label: "Audit Compliance", value: "100%" },
-      { label: "Data Isolation", value: "Complete" },
-    ],
-    tech: [
-      "Power Apps",
-      "Dataverse",
-      "Power Automate",
-      "Row-Level Security",
-      "Audit Logs",
-    ],
-    impact: "Fully isolated approval engine for sensitive financial rebates",
-    commits: 180,
-    filesChanged: 460,
-    mergedDate: "2025-01-20",
-  },
-  {
-    section: "Operational History",
+    section: "Lark Ecosystem",
     id: 9,
     title: "DocFinder — AI Document Search",
     status: "merged",
-    statusColor: "orange",
+    statusColor: "green",
     description:
-      "AI-powered operational guidelines search engine. Built on Lark ecosystem (pre-Microsoft stack, 2024). Uses AI Builder for intelligent document classification — 80% faster search times, 99% accuracy.",
+      "AI-powered operational guidelines search engine. Built on Lark ecosystem (pre-Microsoft stack, 2024). Uses AI Builder for intelligent document classification.",
     metrics: [
       { label: "Search Speed Boost", value: "80%" },
       { label: "Recommendation Accuracy", value: "99%" },
@@ -761,12 +752,12 @@ export const typedProjects: Project[] = [
     ],
     tech: ["AI Builder", "Lark Chat", "Lark Base"],
     impact: "80% faster document search, 99% recommendation accuracy",
-    commits: 140,
-    filesChanged: 340,
+    commits: 0,
+    filesChanged: 0,
     mergedDate: "2024-05-10",
   },
   {
-    section: "Operational History",
+    section: "Lark Ecosystem",
     id: 10,
     title: "LeadFlow — Task & Progress Management",
     status: "merged",
@@ -780,16 +771,16 @@ export const typedProjects: Project[] = [
     ],
     tech: ["Lark Task", "Lark Automation", "Lark Base", "Power BI"],
     impact: "40% increase in task completion, 100% real-time visibility",
-    commits: 160,
-    filesChanged: 380,
+    commits: 0,
+    filesChanged: 0,
     mergedDate: "2024-11-01",
   },
   {
-    section: "Operational History",
+    section: "Lark Ecosystem",
     id: 11,
     title: "LeaveSync — Smart Leave Management",
     status: "merged",
-    statusColor: "purple",
+    statusColor: "green",
     description:
       "Automated leave management system. Built on Lark ecosystem (pre-Microsoft stack, 2024). Cut leave processing time by 60%, accelerated approvals by 60%.",
     metrics: [
@@ -799,8 +790,8 @@ export const typedProjects: Project[] = [
     ],
     tech: ["Lark Base", "Lark Automation", "Lark Chat"],
     impact: "60% faster leave processing and approvals",
-    commits: 130,
-    filesChanged: 310,
+    commits: 0,
+    filesChanged: 0,
     mergedDate: "2024-09-15",
   },
   {
@@ -818,8 +809,8 @@ export const typedProjects: Project[] = [
     ],
     tech: ["Lark Base", "Lark Automation"],
     impact: "60% faster responses, 50% fewer repeated queries",
-    commits: 110,
-    filesChanged: 260,
+    commits: 0,
+    filesChanged: 0,
     mergedDate: "2024-07-20",
   },
   {
@@ -837,8 +828,8 @@ export const typedProjects: Project[] = [
     ],
     tech: ["Lark Base", "Lark Automation", "Power BI"],
     impact: "40% monitoring efficiency gain, 50% faster issue resolution",
-    commits: 120,
-    filesChanged: 290,
+    commits: 0,
+    filesChanged: 0,
     mergedDate: "2024-03-01",
   },
   {
@@ -848,7 +839,7 @@ export const typedProjects: Project[] = [
     status: "merged",
     statusColor: "green",
     description:
-      "Instant event alert system for game moderators. Built on Lark ecosystem (pre-Microsoft stack, 2024). REST API integration. Reduced external searches by 80%.",
+      "Instant event alert system for game moderators. Built on Lark ecosystem (pre-Microsoft stack, 2024). REST API integration.",
     metrics: [
       { label: "External Search Cut", value: "80%" },
       { label: "Labeling Accuracy", value: "40%" },
@@ -856,8 +847,8 @@ export const typedProjects: Project[] = [
     ],
     tech: ["Game Data REST APIs", "Lark Automation", "Lark Chat"],
     impact: "80% reduction in external searches, sub-second alerts",
-    commits: 90,
-    filesChanged: 220,
+    commits: 0,
+    filesChanged: 0,
     mergedDate: "2024-01-15",
   },
   {
@@ -875,8 +866,8 @@ export const typedProjects: Project[] = [
     ],
     tech: ["Lark Automation", "Lark Base", "Power BI"],
     impact: "30% productivity lift, 100% real-time attendance visibility",
-    commits: 150,
-    filesChanged: 360,
+    commits: 0,
+    filesChanged: 0,
     mergedDate: "2023-11-01",
   },
   {
@@ -894,8 +885,8 @@ export const typedProjects: Project[] = [
     ],
     tech: ["Power Automate", "Power BI"],
     impact: "15% reduction in average handling time across 8 teams",
-    commits: 80,
-    filesChanged: 190,
+    commits: 0,
+    filesChanged: 0,
     mergedDate: "2023-09-01",
   },
 ];
@@ -942,14 +933,13 @@ export const timeline: TimelineEvent[] = [
   {
     date: "2024 – 2026",
     emoji: "📐",
-    title: "Power Platform Solution Architect — IOI Group",
+    title: "Enterprise Power Platform & Dynamics 365 Solution Architect — IOI Group",
     description:
-      "Led enterprise-wide Domino-to-Microsoft 365 migration — modernizing 365+ business applications across 28+ departments. Designed dual-track architecture with Phase 1 SharePoint Online and Phase 2 Dataverse Migration Blueprint. Built 50+ AI agents across 12 automated pipelines.",
+      "Led enterprise-wide Domino-to-Microsoft 365 migration — modernizing 361 legacy business applications across 28+ departments. Designed dual-track architecture with Phase 1 SharePoint Online staging and Phase 2 Dataverse Migration Blueprint. Implemented CI/CD pipelines with GitHub Actions and Azure DevOps. Deployed AI-assisted development pipelines with enterprise governance.",
     highlights: [
       "16 production Power Apps deployed",
-      "50+ AI agents across 12 pipelines",
-      "E-Procurement system with real-time Oracle ERP sync",
       "Dataverse Migration Blueprint with ERD and Security Roles",
+      "E-Procurement system with real-time Oracle ERP sync",
       "Managed Solution ALM with GitHub Actions CI/CD",
       "PCF Controls (TypeScript/React) and C# Dataverse Plugins",
     ],
@@ -977,49 +967,50 @@ export const social = {
 export const methodology = {
   title: "Enterprise Governance & ALM Methodology",
   description:
-    "Enterprise-grade quality, security, ALM, and compliance standards applied across all projects — including managed solution boundaries, environment strategy, and CI/CD pipeline architecture.",
+    "Enterprise-grade Dataverse architecture, solution governance, ALM, and compliance standards applied across all projects — including managed solution boundaries, environment strategy, C# Plugins, PCF Controls, and CI/CD pipeline architecture.",
   standards: [
     {
-      name: "Solution ALM & CI/CD",
+      name: "Dataverse Solution Architecture",
+      icon: "🏛️",
+      description:
+        "MainDB parent tables with FormCode discriminator, polymorphic child lookups, Business Unit hierarchy, Security Role inheritance, Field Security Profiles, and alternate keys for ERP sync",
+    },
+    {
+      name: "Managed Solution ALM & CI/CD",
       icon: "🔄",
       description:
-        "GitHub Actions + Azure DevOps pipelines with Power Platform Build Tools, managed vs. unmanaged solution boundaries, environment variables, and connection references",
+        "Solution Segmentation: holding solution → target managed solutions. PAC CLI automation (clone, pack/unpack, code generate). Deployment Settings Files with per-environment connection references and environment variables. GitHub Actions + Azure DevOps with Power Platform Build Tools",
     },
     {
       name: "Environment Strategy",
       icon: "🌐",
       description:
-        "Dev → Build → Test → Prod pipeline with deployment settings files, dynamic environment variable replacement, and staged solution promotion",
+        "Dev (unmanaged) → Build (export + managed packaging) → Test (managed import + automated validation) → Prod (managed import + smoke test). Solution Checker on every PR. PnP PowerShell for idempotent provisioning",
     },
     {
-      name: "WCAG 2.2 AA Accessibility",
-      icon: "♿",
+      name: "C# Plugins & PCF Controls",
+      icon: "🔌",
       description:
-        "All applications meet inclusive design standards with automated accessibility checks",
+        "Dataverse Plugins on Pre/Post-Operation pipeline stages with Application Insights telemetry. PCF Controls (TypeScript/React) for custom Model-Driven App UI with server-side OData filtering",
     },
     {
-      name: "OWASP Top 10 Security",
+      name: "AI Governance & DLP",
+      icon: "🤖",
+      description:
+        "DLP policies enforcing data classification, content filtering preventing PII leakage, RAG-grounded Azure OpenAI with vector-indexed schema, prompt evaluation frameworks, and cost governance",
+    },
+    {
+      name: "WCAG 2.2 AA & OWASP Top 10",
       icon: "🔒",
       description:
-        "Security-first development with vulnerability scanning, threat modeling, and Dataverse security role inheritance",
-    },
-    {
-      name: "Core Web Vitals Performance",
-      icon: "⚡",
-      description: "Performance budgets, lazy loading, and optimized rendering",
-    },
-    {
-      name: "PA YAML v3.0 Schema Compliance",
-      icon: "📋",
-      description:
-        "Strict Canvas App schema validation with automated CI/CD quality gates",
+        "38+ accessibility anti-patterns resolved, 55+ security anti-patterns with detection regex, GxP compliance with immutable audit trails, Core Web Vitals performance standards",
     },
   ],
   artifacts: [
-    { label: "Documentation Files", value: "200+" },
-    { label: "CI/CD Quality Gates", value: "12" },
-    { label: "AI Agent Pipelines", value: "12" },
-    { label: "Enterprise Standards", value: "6" },
+    { label: "Dataverse Target Tables", value: "50+" },
+    { label: "Managed Solutions", value: "12" },
+    { label: "C# Plugins", value: "5" },
+    { label: "PCF Controls", value: "4" },
   ],
 };
 
@@ -1498,4 +1489,322 @@ export const stacks = {
 export const fullPortfolioData = {
   ...portfolioData,
   stacks,
+};
+
+// ============================================================
+// 14. Dataverse Target Architecture (ERD & Schema)
+// ============================================================
+
+export const dataverseSchema = {
+  title: "Dataverse Target Architecture — Entity-Relationship Model",
+  description:
+    "Enterprise-grade Dataverse schema with MainDB parent tables, polymorphic child lookups, Business Unit hierarchy, Security Role inheritance, and Field Security Profiles.",
+  entities: [
+    {
+      name: "MainDB_{Dept}",
+      type: "Parent Table",
+      discriminator: "FormCode",
+      keyColumns: [
+        "MainDBID (Primary Key, GUID)",
+        "FormCode (Choice — discriminates ITSSR, ITHDP, ITRFQ, etc.)",
+        "Title (Single line of text)",
+        "Status (Choice — Draft, Submitted, In Progress, Approved, Rejected, Closed)",
+        "Priority (Choice — Low, Medium, High, Critical)",
+        "Requestor (Lookup → SystemUser)",
+        "Department (Lookup → Department)",
+        "CreatedOn (DateTime — immutable)",
+        "ModifiedOn (DateTime — immutable)",
+      ],
+      security: [
+        "Business Unit: Mapped to department hierarchy",
+        "Security Role: Department-specific with 5-tier approval",
+        "Field Security: Requestor, Amount, PII columns",
+      ],
+    },
+    {
+      name: "MainDB_{Dept}_Tasks",
+      type: "Child Table",
+      relationship: "Polymorphic Lookup → MainDB_{Dept}",
+      keyColumns: [
+        "TaskID (Primary Key, GUID)",
+        "ParentRequestID (Lookup → MainDB_{Dept})",
+        "TaskDescription (Multiple lines of text)",
+        "AssignedTo (Lookup → SystemUser)",
+        "DueDate (Date and Time)",
+        "Status (Choice — Pending, In Progress, Completed)",
+      ],
+    },
+    {
+      name: "MainDB_{Dept}_Attachments",
+      type: "Child Table",
+      relationship: "Polymorphic Lookup → MainDB_{Dept}",
+      keyColumns: [
+        "AttachmentID (Primary Key, GUID)",
+        "ParentRequestID (Lookup → MainDB_{Dept})",
+        "FileName (Text)",
+        "FileSize (Integer)",
+        "UploadedBy (Lookup → SystemUser)",
+        "UploadedOn (DateTime)",
+      ],
+    },
+    {
+      name: "PurchaseRequest",
+      type: "Parent Table (E-Procurement)",
+      keyColumns: [
+        "PurchaseRequestID (Primary Key, GUID)",
+        "Requestor (Lookup → SystemUser)",
+        "Department (Lookup → Department)",
+        "TotalAmount (Currency)",
+        "Status (Choice — Draft, Pending LOA, Approved, Rejected)",
+        "CIPBudgetCode (Text — Alternate Key for ERP sync)",
+        "ERPSyncStatus (Choice — Pending, Synced, Failed)",
+      ],
+      security: [
+        "Business Unit: Financial Services (isolated)",
+        "Security Role: 5-tier approval matrix",
+        "Field Security: TotalAmount, CIPBudgetCode, PO numbers",
+        "Audit Logging: Column-level tracking enabled",
+      ],
+    },
+    {
+      name: "PurchaseOrder",
+      type: "Child Table (E-Procurement)",
+      relationship: "Polymorphic Lookup → PurchaseRequest",
+      keyColumns: [
+        "PurchaseOrderID (Primary Key, GUID)",
+        "PurchaseRequestID (Lookup → PurchaseRequest)",
+        "VendorID (Lookup → Vendor)",
+        "POAmount (Currency)",
+        "PODate (Date)",
+        "ERPSyncStatus (Choice — Pending, Synced, Failed)",
+      ],
+    },
+    {
+      name: "Department",
+      type: "Reference Table",
+      keyColumns: [
+        "DepartmentID (Primary Key, GUID)",
+        "DepartmentName (Text)",
+        "BusinessUnitID (Lookup → BusinessUnit)",
+        "SiteURL (Text — SharePoint site mapping)",
+      ],
+    },
+  ],
+  relationships: [
+    "MainDB_{Dept} ← MainDB_{Dept}_Tasks (1:N polymorphic)",
+    "MainDB_{Dept} ← MainDB_{Dept}_Attachments (1:N polymorphic)",
+    "PurchaseRequest ← PurchaseOrder (1:N polymorphic)",
+    "Department → BusinessUnit (N:1 lookup)",
+    "MainDB_{Dept}.Requestor → SystemUser (N:1 lookup)",
+    "MainDB_{Dept}.Department → Department (N:1 lookup)",
+  ],
+};
+
+// ============================================================
+// 15. Security Architecture
+// ============================================================
+
+export const securityArchitecture = {
+  title: "Enterprise Security Architecture",
+  description:
+    "Microsoft Entra ID → Dataverse Security Roles → Business Units → Row-Level → Field-Level security, with GxP-compliant audit trails.",
+  layers: [
+    {
+      layer: "Identity & Access",
+      icon: "🔐",
+      items: [
+        "Microsoft Entra ID (Azure AD) — primary identity provider",
+        "Conditional Access Policies — device compliance, location-based",
+        "Multi-Factor Authentication (MFA) — enforced for all users",
+        "Single Sign-On (SSO) — SAML 2.0 / OpenID Connect",
+        "Application Users (SPNs) — for automated integrations",
+      ],
+    },
+    {
+      layer: "Dataverse Security Model",
+      icon: "🛡️",
+      items: [
+        "Business Unit Hierarchy — mapped to departmental structure",
+        "Security Role Inheritance — child roles inherit parent permissions",
+        "5-Tier Approval Matrix — Requestor → Line Manager → Finance → Compliance → Executive",
+        "Row-Level Security — users see only their department's records",
+        "Field-Level Security — PII/financial columns restricted to authorized roles",
+      ],
+    },
+    {
+      layer: "Data Protection",
+      icon: "🔒",
+      items: [
+        "Dataverse Auditing — column-level immutable audit trails",
+        "Field Security Profiles — for amounts, PO numbers, PII",
+        "Data Encryption — at rest (AES-256) and in transit (TLS 1.2+)",
+        "Azure Key Vault — secrets management",
+        "Power Platform DLP Policies — data classification enforcement",
+      ],
+    },
+    {
+      layer: "Compliance",
+      icon: "📋",
+      items: [
+        "GxP Compliance — immutable audit trails, field-level tracking",
+        "WCAG 2.2 AA — 38+ accessibility anti-patterns resolved",
+        "OWASP Top 10 — 55+ security anti-patterns with detection",
+        "GDPR — data retention, right to erasure, consent management",
+        "Tenant Isolation — cross-tenant access controls",
+      ],
+    },
+  ],
+};
+
+// ============================================================
+// 16. ALM Pipeline Architecture
+// ============================================================
+
+export const almPipeline = {
+  title: "Enterprise ALM Pipeline Architecture",
+  description:
+    "Solution Segmentation, PAC CLI automation, staged environment promotion, and CI/CD with Quality Gates.",
+  stages: [
+    {
+      name: "Development",
+      environment: "Dev",
+      solutionType: "Unmanaged",
+      description:
+        "Developers work in unmanaged solutions. PAC CLI: pac auth create, pac solution clone. Source-controlled via GitHub.",
+      tools: ["PAC CLI", "VS Code", "GitHub Copilot", "Power Apps Studio"],
+    },
+    {
+      name: "Build",
+      environment: "Build",
+      solutionType: "Managed (Exported)",
+      description:
+        "Automated export + managed packaging. Solution Checker runs. Deployment Settings Files generated with per-environment connection references.",
+      tools: [
+        "GitHub Actions",
+        "Azure DevOps",
+        "Power Platform Build Tools",
+        "Solution Checker",
+      ],
+    },
+    {
+      name: "Test",
+      environment: "Test",
+      solutionType: "Managed (Imported)",
+      description:
+        "Managed import + automated validation. Connection references resolved. Environment variables applied. Smoke tests pass.",
+      tools: [
+        "PAC CLI import",
+        "Automated Validation",
+        "Playwright E2E",
+        "PnP PowerShell",
+      ],
+    },
+    {
+      name: "Production",
+      environment: "Prod",
+      solutionType: "Managed (Imported)",
+      description:
+        "Managed import + smoke test. Zero-downtime deployment. Monitoring via Application Insights. Rollback capability.",
+      tools: [
+        "PAC CLI import",
+        "Application Insights",
+        "Azure Monitor",
+        "Power Platform Analytics",
+      ],
+    },
+  ],
+  solutionSegmentation: [
+    {
+      name: "Holding Solution",
+      purpose: "Shared components: entities, option sets, global settings",
+      managed: false,
+    },
+    {
+      name: "Core Entities",
+      purpose: "MainDB tables, child tables, reference data",
+      managed: true,
+    },
+    {
+      name: "Business Logic",
+      purpose: "C# Plugins, PCF Controls, Cloud Flows",
+      managed: true,
+    },
+    {
+      name: "UI Layer",
+      purpose: "Canvas Apps, Model-Driven Apps, Dashboards",
+      managed: true,
+    },
+  ],
+  pacCliCommands: [
+    "pac auth create --kind admin",
+    "pac solution clone --name {solution} --outputDirectory ./source",
+    "pac canvas pack --msapp {path} --output {path}",
+    "pac code generate --skip-update-check",
+    "pac org who",
+    "pac env list",
+  ],
+};
+
+// ============================================================
+// 17. Dynamics 365 First-Party Awareness
+// ============================================================
+
+export const d365Awareness = {
+  title: "Dynamics 365 & First-Party App Architecture Awareness",
+  description:
+    "Architectural awareness of Dynamics 365 first-party modules and when to use them vs. custom Canvas/Model-Driven solutions.",
+  modules: [
+    {
+      name: "Dynamics 365 Sales",
+      useCase:
+        "Lead-to-opportunity pipeline, quote generation, activity tracking",
+      architecture:
+        "Entity model: Lead → Opportunity → Quote → Order. Business Process Flows for stage-gated sales processes. Power Automate for approval routing.",
+      relevance:
+        "E-Procurement RFQ/SPQQ modules align with Sales entity patterns",
+    },
+    {
+      name: "Dynamics 365 Customer Service",
+      useCase: "Case management, SLA tracking, knowledge base, omnichannel",
+      architecture:
+        "Entity model: Case → Activity → Resolution. SLA KPI tracking. Unified Routing for intelligent case assignment.",
+      relevance:
+        "CS Resolver (AI-powered case classification) aligns with Customer Service patterns",
+    },
+    {
+      name: "Dynamics 365 Finance & Operations",
+      useCase:
+        "General ledger, accounts payable/receivable, procurement, budgeting",
+      architecture:
+        "Dual-write with Dataverse. Financial dimensions. Vendor management. Purchase order lifecycle.",
+      relevance:
+        "E-Procurement system with Oracle PowerBiz ERP sync — future integration path for F&O",
+    },
+    {
+      name: "Model-Driven Apps",
+      useCase:
+        "Data-heavy back-office processes, complex entity relationships, audit trails",
+      architecture:
+        "Dataverse-native UI with Business Process Flows, business rules, dashboards, and charts. Extensible via PCF Controls and C# Plugins.",
+      relevance:
+        "Recommended for departmental processes exceeding Canvas App complexity threshold",
+    },
+  ],
+  architecturalGuidance: [
+    {
+      decision: "When to use Model-Driven vs Canvas Apps",
+      guidance:
+        "Model-Driven for data-heavy processes with complex entity relationships, business process flows, and audit requirements. Canvas for specialized UX, mobile-first, or citizen-developer authored screens.",
+    },
+    {
+      decision: "When to use Dynamics 365 vs Custom Solutions",
+      guidance:
+        "D365 first-party for standard business processes (Sales, Service, Finance). Custom solutions for proprietary workflows, specialized integrations, or processes that don't fit D365 entity models.",
+    },
+    {
+      decision: "Dataverse as the common data layer",
+      guidance:
+        "Dataverse serves as the unified data platform for both D365 first-party apps and custom solutions. Entity relationships, security, and audit trails are consistent across both.",
+    },
+  ],
 };

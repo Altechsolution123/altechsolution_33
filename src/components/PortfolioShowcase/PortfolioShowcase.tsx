@@ -156,12 +156,12 @@ export const PortfolioShowcase: React.FC = () => {
         }}
       >
         {data.portfolioSummary.totalApplications}+ business applications
-        modernized across {data.portfolioSummary.departmentsCovered.length}{" "}
+        catalogued across {data.portfolioSummary.departmentsCovered.length}{" "}
         departments — {data.portfolioSummary.totalDeployedApps} production apps
         deployed with{" "}
         {data.portfolioSummary.totalCanvasScreens.toLocaleString()}+ Canvas
-        screens, {data.portfolioSummary.totalTypeScriptComponents}+ components,
-        and {data.portfolioSummary.totalAIAgents}+ AI agents.
+        screens, {data.portfolioSummary.totalTypeScriptComponents}+ reusable components,
+        and {data.portfolioSummary.totalAIAgents}+ domain-specific AI agents.
       </p>
 
       {/* Summary Stats Bar */}

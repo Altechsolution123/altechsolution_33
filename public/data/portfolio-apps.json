@@ -3,9 +3,9 @@
     "totalApplications": 92,
     "totalDeployedApps": 16,
     "totalCanvasScreens": 7878,
-    "totalTypeScriptComponents": 400,
-    "totalAutomationScripts": 1800,
-    "totalAIAgents": 50,
+    "totalTypeScriptComponents": 200,
+    "totalAutomationScripts": 150,
+    "totalAIAgents": 12,
     "departmentsCovered": [
       "IT & Technical Services",
       "HR & People Operations",

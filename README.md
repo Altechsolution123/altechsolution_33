@@ -1,12 +1,12 @@
-# Ali Akhmad Fauzie — Power Platform Architect Portfolio
+# Ali Akhmad Fauzie — Enterprise Power Platform & D365 Architect Portfolio
 
-Enterprise Power Platform Solution Architect specializing in large-scale M365 migrations, AI-enabled development pipelines, and enterprise architecture governance.
+Enterprise Power Platform & Dynamics 365 Solution Architect specializing in Dataverse-first architecture, C# Plugins, PCF Controls, enterprise ALM, and AI-enabled development with governance.
 
 ## Quick Start
 
 ```bash
 npm install
-npm run dev      # Development server at http://localhost:5173
+npm run dev      # Development server at http://localhost:3000
 npm run build    # Production build to dist/
 npm run preview  # Preview production build
 ```
@@ -19,7 +19,11 @@ npm run preview  # Preview production build
 | Language   | TypeScript 5.8 (strict mode)    |
 | Build Tool | Vite 6.3                        |
 | Styling    | CSS + inline theme system       |
-| Deployment | GitHub Pages via GitHub Actions |
+| Deployment | Vercel (auto-deploy from main)  |
+
+## Live
+
+https://portfolio-kappa-six-3t5lqnvutu.vercel.app
 
 ## Project Structure
 

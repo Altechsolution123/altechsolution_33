@@ -16,9 +16,9 @@ export interface HeroProps {
 // ============================================================
 export const Hero: React.FC<HeroProps> = ({ developer }) => {
   const typingPhrases = [
-    "Power Platform Architect",
-    "Enterprise Solution Architect",
-    "AI & Automation Lead",
+    "Power Platform & Dynamics 365 Architect",
+    "Dataverse Data Architect",
+    "Enterprise ALM & AI Automation Lead",
     "M365 Modernization Specialist",
   ];
 

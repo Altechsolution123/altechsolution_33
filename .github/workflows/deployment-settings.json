@@ -1,0 +1,124 @@
+[
+  {
+    "Environment": "dev",
+    "ConnectionReferences": [
+      {
+        "LogicalName": "ioi_SharePointOnline",
+        "ConnectionId": "",
+        "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+      },
+      {
+        "LogicalName": "ioi_Dataverse",
+        "ConnectionId": "",
+        "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+      },
+      {
+        "LogicalName": "ioi_Office365Outlook",
+        "ConnectionId": "",
+        "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+      },
+      {
+        "LogicalName": "ioi_OracleERP",
+        "ConnectionId": "",
+        "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_customconnector"
+      }
+    ],
+    "EnvironmentVariables": [
+      {
+        "SchemaName": "ioi_SharePointSiteUrl",
+        "Value": "https://ioigroupdev.sharepoint.com/sites/DigitalIT"
+      },
+      {
+        "SchemaName": "ioi_OracleERPEndpoint",
+        "Value": "https://erp-dev.ioigroup.com/api/v2"
+      },
+      {
+        "SchemaName": "ioi_ApprovalNotificationEmail",
+        "Value": "powerplatform-dev@ioigroup.com"
+      }
+    ]
+  },
+  {
+    "Environment": "build",
+    "ConnectionReferences": [],
+    "EnvironmentVariables": []
+  },
+  {
+    "Environment": "test",
+    "ConnectionReferences": [
+      {
+        "LogicalName": "ioi_SharePointOnline",
+        "ConnectionId": "",
+        "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+      },
+      {
+        "LogicalName": "ioi_Dataverse",
+        "ConnectionId": "",
+        "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+      },
+      {
+        "LogicalName": "ioi_Office365Outlook",
+        "ConnectionId": "",
+        "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+      },
+      {
+        "LogicalName": "ioi_OracleERP",
+        "ConnectionId": "",
+        "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_customconnector"
+      }
+    ],
+    "EnvironmentVariables": [
+      {
+        "SchemaName": "ioi_SharePointSiteUrl",
+        "Value": "https://ioigrouptest.sharepoint.com/sites/DigitalIT"
+      },
+      {
+        "SchemaName": "ioi_OracleERPEndpoint",
+        "Value": "https://erp-test.ioigroup.com/api/v2"
+      },
+      {
+        "SchemaName": "ioi_ApprovalNotificationEmail",
+        "Value": "powerplatform-test@ioigroup.com"
+      }
+    ]
+  },
+  {
+    "Environment": "prod",
+    "ConnectionReferences": [
+      {
+        "LogicalName": "ioi_SharePointOnline",
+        "ConnectionId": "",
+        "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+      },
+      {
+        "LogicalName": "ioi_Dataverse",
+        "ConnectionId": "",
+        "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+      },
+      {
+        "LogicalName": "ioi_Office365Outlook",
+        "ConnectionId": "",
+        "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+      },
+      {
+        "LogicalName": "ioi_OracleERP",
+        "ConnectionId": "",
+        "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_customconnector"
+      }
+    ],
+    "EnvironmentVariables": [
+      {
+        "SchemaName": "ioi_SharePointSiteUrl",
+        "Value": "https://ioigroup.sharepoint.com/sites/DigitalIT"
+      },
+      {
+        "SchemaName": "ioi_OracleERPEndpoint",
+        "Value": "https://erp.ioigroup.com/api/v2"
+      },
+      {
+        "SchemaName": "ioi_ApprovalNotificationEmail",
+        "Value": "powerplatform-prod@ioigroup.com"
+      }
+    ]
+  }
+]

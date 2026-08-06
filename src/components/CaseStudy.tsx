@@ -16,48 +16,74 @@ interface ArchLayer {
 
 const ARCH_LAYERS: ArchLayer[] = [
   {
+    id: "dataverse-erd",
+    title: "Dataverse Target Architecture (Primary)",
+    icon: "🏛️",
+    color: "#f0883e",
+    description:
+      "Enterprise-grade Dataverse as the production data layer: MainDB parent tables with FormCode discriminator, polymorphic child lookups, Business Unit hierarchy for departmental isolation, Security Role inheritance with 5-tier approval matrices, Field Security Profiles for PII/financial data, and alternate keys for Oracle ERP bidirectional sync.",
+    details: [
+      "MainDB_{Dept} parent tables with FormCode discriminator — 28 department sites",
+      "Polymorphic child tables: Tasks, Comments, Attachments with cascade delete",
+      "Business Unit hierarchy mapped to departmental data isolation",
+      "Security Role inheritance: Requestor → Line Manager → Finance → Compliance → Executive",
+      "Field Security Profiles on amounts, PO numbers, PII columns",
+      "Alternate keys for Oracle ERP bidirectional sync (CIPBudgetCode, PO numbers)",
+      "Dataverse Auditing: column-level immutable audit trails for GxP compliance",
+    ],
+    techTags: [
+      "Dataverse",
+      "Business Units",
+      "Security Roles",
+      "Field Security",
+      "Polymorphic Lookups",
+      "Alternate Keys",
+    ],
+  },
+  {
     id: "presentation",
     title: "Presentation Layer",
     icon: "🖥️",
     color: "#58a6ff",
     description:
-      "Dual-track delivery: React 19 TypeScript code-first app for complex functionality across all departments, plus 16 Canvas Apps (Power Fx + PA YAML v3.0) for per-department business forms.",
+      "Dual-track delivery: React 19 TypeScript code-first app for complex functionality, plus 16 Canvas Apps (Power Fx + PA YAML v3.0) for per-department business forms. Model-Driven Apps recommended for data-heavy back-office processes.",
     details: [
       "React 19 with Vite, shadcn/ui, Jotai state management, and TanStack Query",
       "16 Canvas Apps with reusable component definitions in PA YAML v3.0",
+      "Model-Driven Apps for data-heavy processes with Business Process Flows",
       "HTML Text/HtmlViewer for rich read-only visual areas matching UI designs 1:1",
-      "Triple Container Strategy for responsive layouts across desktop, tablet, and mobile",
-      "IntersectionObserver-based scroll animations and glass-morphism design system",
+      "PCF Controls (TypeScript/React) extending Model-Driven App capabilities",
     ],
     techTags: [
       "React 19",
       "TypeScript 5.9",
-      "Vite",
-      "shadcn/ui",
       "Power Fx",
       "PA YAML",
+      "PCF Controls",
+      "Model-Driven Apps",
     ],
   },
   {
     id: "data",
-    title: "Data Layer",
+    title: "Interim Data Layer (SharePoint Online)",
     icon: "💾",
     color: "#bc8cff",
     description:
-      "SharePoint Online as the primary data store with a single MainDB_{Dept} list per site using FormCode discriminator. Dataverse for relational parent-child topologies and compliance-grade isolated databases.",
+      "SharePoint Online as an interim cost-optimization staging layer — NOT the target production architecture. Deployed during Phase 1 to avoid $960K/yr in premium licensing. Dataverse Migration Blueprint defines the enterprise-grade target.",
     details: [
-      "Single MainDB_{Dept} list per SharePoint site — FormCode column discriminates form types",
-      "Parent-Child data topology: MainDB parent lists → relational child task/comment/attachment tables",
-      "Choice and Lookup columns mapped to dropdowns and combo boxes in Canvas Apps",
-      "People columns integrated with Office 365 Users connector for person/group lookups",
-      "Dataverse for E-Procurement and Rebate Approval with custom table relationships",
+      "Phase 1 staging layer: Single MainDB_{Dept} list per SharePoint site with FormCode discriminator",
+      "Cost optimization: Avoided $960K/yr in premium connector licensing for 2,000+ users",
+      "Accepts SPO constraints: 5,000-item threshold, no relational integrity, no row/field-level security",
+      "Documented migration path: SharePoint list → Dataverse table with column mapping",
+      "Data accuracy improved from 70% (free-text) to 98% (typed columns) as interim improvement",
+      "Indexed columns for delegation-safe queries during Phase 1",
     ],
     techTags: [
       "SharePoint Online",
-      "Dataverse",
-      "MainDB Pattern",
+      "Interim Staging",
+      "Cost Optimization",
       "FormCode",
-      "Parent-Child",
+      "Migration Path",
     ],
   },
   {
@@ -66,60 +92,73 @@ const ARCH_LAYERS: ArchLayer[] = [
     icon: "⚡",
     color: "#3fb950",
     description:
-      "Power Automate cloud flows for approvals, notifications, and routing. Custom Connectors with REST APIs for bidirectional ERP synchronization. 8 production flows with standard connectors only.",
+      "Power Automate cloud flows for approvals, notifications, and routing. Custom Connectors with REST APIs for bidirectional ERP synchronization. Multi-level approval flows with Dataverse as the data layer.",
     details: [
       "Multi-level approval flows — up to 5 tiers routing through department head → division head → COO → ED",
-      "Standard connectors only: SharePoint, Office 365 Outlook, Approvals, Teams — no premium licensing",
+      "Standard connectors: SharePoint, Office 365 Outlook, Approvals, Teams",
       "Custom Connectors for ERP: real-time bidirectional sync for PR, PO, GRN, and invoice",
+      "C# Dataverse Plugins on Pre/Post-Operation pipeline for business rule enforcement",
       "Email notifications with deep links back to Power Apps for instant form access",
-      "FlowStudio MCP for headless flow management — discover, bump, clone, create/update flows via API",
     ],
     techTags: [
       "Power Automate",
       "Approvals",
-      "Outlook",
-      "Teams",
+      "C# Plugins",
       "Custom Connectors",
       "REST APIs",
+      "ERP Sync",
     ],
   },
   {
     id: "enterprise",
-    title: "Enterprise Systems",
+    title: "Enterprise Security & Compliance",
     icon: "🏢",
     color: "#ffa657",
     description:
-      "ERP bidirectional synchronization via Custom Connectors. Microsoft 365 Entra ID for authentication, Outlook for notifications, Teams for collaboration. CIP Capex Budget Control integrated into procurement.",
+      "Microsoft Entra ID with Conditional Access, MFA, and SSO. Dataverse Security Role inheritance with row-level and field-level security. GxP compliance with immutable audit trails. OWASP Top 10 and WCAG 2.2 AA standards.",
     details: [
-      "ERP sync: Purchase Requisitions, Purchase Orders, GRN, and Invoices in real-time",
-      "Microsoft Entra ID for single sign-on and role-based access control across all apps",
-      "Office 365 Outlook for automated email notifications and meeting scheduling",
-      "Microsoft Teams integration for approval actions and channel notifications",
-      "CIP Capex Budget Control — real-time budget validation against ERP before PO issuance",
+      "Microsoft Entra ID: Conditional Access, MFA, SSO (SAML 2.0 / OIDC)",
+      "Dataverse Security Roles: 5-tier approval matrix with role inheritance",
+      "Row-Level Security: users see only their department's records",
+      "Field Security Profiles: PII/financial columns restricted to authorized roles",
+      "GxP Compliance: immutable audit trails via Dataverse Auditing (column-level)",
+      "WCAG 2.2 AA: 38+ accessibility anti-patterns resolved",
+      "OWASP Top 10: 55+ security anti-patterns with detection regex",
     ],
-    techTags: ["ERP", "Entra ID", "Outlook", "Teams", "CIP Budget", "SSO"],
+    techTags: [
+      "Entra ID",
+      "MFA",
+      "SSO",
+      "Security Roles",
+      "GxP",
+      "WCAG 2.2",
+      "OWASP",
+    ],
   },
   {
     id: "devops",
-    title: "DevOps & AI",
+    title: "Enterprise ALM & AI Governance",
     icon: "🤖",
     color: "#f85149",
     description:
-      "50+ AI coding assistants across 12 automated development pipelines. GitHub Actions + Azure Pipelines for CI/CD. PAC CLI + PnP PowerShell for deployment. Enterprise governance standards baked into every pipeline.",
+      "Solution Segmentation with managed/unmanaged boundaries. PAC CLI automation. GitHub Actions + Azure DevOps CI/CD with Solution Checker. AI-assisted development with DLP policies, content filtering, and prompt evaluation frameworks.",
     details: [
-      "50+ AI agents: legacy-migration-agent, canvas-migration-architect, canvas-screen-builder, msapp-builder, and more",
-      "12 automated pipelines: Form Migration, TSX Screen Dev, Canvas Migration, SharePoint Validation, QA",
-      "GitHub Actions: lint → typecheck → build → test → deploy with environment matrix",
-      "PAC CLI: canvas pack/unpack, solution clone, auth, code generate for SharePoint services",
-      "PnP PowerShell: idempotent list creation, column provisioning, schema export for 28+ department sites",
+      "Solution Segmentation: Holding → Core Entities → Business Logic → UI Layer (managed)",
+      "PAC CLI: solution clone, pack/unpack, auth, code generate, canvas pack",
+      "Deployment Settings Files: per-environment connection references and environment variables",
+      "Staged promotion: Dev (unmanaged) → Build (managed export) → Test (import + validate) → Prod",
+      "Solution Checker on every PR — schema, formula, naming, accessibility compliance",
+      "AI-assisted pipelines with DLP policies, RAG-grounded Azure OpenAI, content filtering",
+      "PnP PowerShell: idempotent provisioning across 28+ department sites",
     ],
     techTags: [
-      "GitHub Actions",
-      "Azure Pipelines",
+      "Solution Segmentation",
       "PAC CLI",
-      "PnP PowerShell",
-      "AI Agents",
-      "CI/CD",
+      "GitHub Actions",
+      "Azure DevOps",
+      "Solution Checker",
+      "AI Governance",
+      "DLP",
     ],
   },
 ];
@@ -127,38 +166,49 @@ const ARCH_LAYERS: ArchLayer[] = [
 // ============================================================
 // Database Model Code Snippets
 // ============================================================
-const DB_MODEL_SNIPPET = `-- SharePoint List Architecture
--- Single MainDB_{Dept} per site with FormCode discriminator
+const DB_MODEL_SNIPPET = `-- Dataverse Target Architecture (Primary Production Layer)
+-- MainDB parent tables with FormCode discriminator
+-- 361 legacy forms catalogued, 16 production apps deployed
 
-MainDB_IT (Parent List)
-├── ID (System)
-├── Title (Single line of text)
+MainDB_IT (Parent Table)
+├── MainDBID (Primary Key, GUID)
+├── Title (Text)
 ├── FormCode (Choice) — discriminates ITSSR, ITHDP, ITRFQ, etc.
 ├── Category (Choice) — Hardware, Software, Network, Security
-├── Status (Choice) — Submitted, Assigned, In Progress, Resolved, Closed
+├── Status (Choice) — Draft, Submitted, In Progress, Approved, Rejected, Closed
 ├── Priority (Choice) — Low, Medium, High, Critical
-├── RequestorEmail (Person or Group)
-├── AssignedTo (Person or Group)
-└── Remarks (Multiple lines of text)
+├── Requestor (Lookup → SystemUser)
+├── Department (Lookup → Department)
+├── CreatedOn (DateTime — immutable)
+└── ModifiedOn (DateTime — immutable)
 
-MainDB_IT_Tasks (Child List)
-├── ID (System)
-├── Title (Single line of text)
-├── ParentRequestID (Lookup → MainDB_IT)
+-- Security: Business Unit → Department hierarchy
+-- Security Roles: 5-tier approval matrix
+-- Field Security: Requestor, Amount, PII columns
+
+MainDB_IT_Tasks (Child Table)
+├── TaskID (Primary Key, GUID)
+├── ParentRequestID (Polymorphic Lookup → MainDB_IT)
 ├── TaskDescription (Multiple lines of text)
-├── AssignedTo (Person or Group)
+├── AssignedTo (Lookup → SystemUser)
 ├── DueDate (Date and Time)
 ├── Status (Choice) — Pending, In Progress, Completed
 └── CompletedDate (Date and Time)
 
--- Dataverse Tables (E-Procurement)
+-- E-Procurement (Dataverse, isolated Business Unit)
 PurchaseRequest (Parent)
-├── PurchaseRequestID (Primary Key)
-├── Requestor (Lookup → User)
+├── PurchaseRequestID (Primary Key, GUID)
+├── Requestor (Lookup → SystemUser)
 ├── Department (Lookup → Department)
-├── TotalAmount (Currency)
+├── TotalAmount (Currency — Field Security Profile)
 ├── Status (Choice) — Draft, Pending LOA, Approved, Rejected
-└── CIPBudgetCode (Text)
+├── CIPBudgetCode (Text — Alternate Key for ERP sync)
+└── ERPSyncStatus (Choice) — Pending, Synced, Failed
+
+-- SharePoint Online (Interim Staging Layer — NOT production)
+MainDB_IT_SPO (Interim List)
+├── Same columns as Dataverse, synced during Phase 1
+└── Migration path documented: SPO → Dataverse table mapping
 
 PurchaseOrder (Child)
 ├── PurchaseOrderID (Primary Key)
@@ -168,7 +218,7 @@ PurchaseOrder (Child)
 ├── PODate (Date)
 └── ERPSyncStatus (Choice) — Pending, Synced, Failed`;
 
-const POWER_FX_SNIPPET = `// Power Fx — Canvas Screen Logic Patterns
+const POWER_FX_SNIPPET = `// Power Fx — Canvas Screen Logic Patterns (Dataverse-First)
 // Source: scrIT_ITSSR_New.pa.yaml (IT Service Request — New Submission)
 
 // ── Screen OnVisible: Initialize form context ──
@@ -177,19 +227,19 @@ Set(gblActiveDept, "IT");
 Set(gblIsNewForm, true);
 Set(gblCurrentUser, User());
 
-// ── Gallery Items: Filter by FormCode ──
+// ── Gallery Items: Filter Dataverse table by FormCode ──
 Filter(
     MainDB_IT,
     FormCode.Value = "ITSSR" && Status.Value <> "Closed"
 )
 
-// ── Dropdown Items: SharePoint Choice column ──
+// ── Dropdown Items: Dataverse Choice column ──
 Choices(MainDB_IT.Category)
 
-// ── People Picker: Office 365 Users ──
+// ── People Picker: Office 365 Users (Entra ID backed) ──
 Office365Users.SearchUser({searchTerm: txtSearch.Text})
 
-// ── Submit: Patch to SharePoint ──
+// ── Submit: Patch to Dataverse ──
 Patch(
     MainDB_IT,
     Defaults(MainDB_IT),
@@ -198,11 +248,9 @@ Patch(
         FormCode: {Value: "ITSSR"},
         Category: ddlCategory.Selected,
         Priority: ddlPriority.Selected,
-        RequestorEmail: {
-            '@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
-            Claims: "i:0#.f|membership|" & User().Email,
-            Email: User().Email,
-            DisplayName: User().FullName
+        Requestor: {
+            '@odata.type': "Microsoft.Dynamics.CRM.systemuser",
+            systemuserid: Office365Users.MyProfile().Id
         },
         Status: {Value: "Submitted"}
     }
@@ -210,7 +258,7 @@ Patch(
 Notify("Request submitted successfully!", NotificationType.Success);
 Navigate(scrIT_ITSSR_Detail, ScreenTransition.Fade);
 
-// ── Role Visibility: Show Approve only for approvers ──
+// ── Role Visibility: Dataverse Security Role check ──
 btnApprove.Visible =
     gblCurrentUserRole = "approver" &&
     galRequests.Selected.Status.Value = "Pending Approval";
@@ -224,48 +272,59 @@ If(
 
 const ARCH_DECISIONS = [
   {
-    title: "DEC-2026-001: Single MainDB per Site",
+    title: "DEC-2026-001: Dataverse as Primary Production Data Layer",
     problem:
-      "23+ form codes per department — separate lists per form would create 800+ lists unmanageable at scale.",
+      "361 legacy applications need enterprise-grade data integrity, row-level security, and managed solution ALM — none achievable with SharePoint Online as a final data store.",
     decision:
-      "One MainDB_{Dept} list per SharePoint site with a FormCode discriminator column.",
+      "Dataverse as the primary production data layer with MainDB parent tables (FormCode discriminator), polymorphic child lookups, Business Unit hierarchy, Security Role inheritance, and Field Security Profiles.",
     tradeoff:
-      "Trades query simplicity (Filter by FormCode) for drastically reduced list sprawl and admin overhead.",
+      "Requires premium licensing for production use, but provides enterprise-grade relational integrity, security, and ALM that SharePoint Online cannot match.",
     impact:
-      "28 sites × 1 list = 28 lists vs. 800+ if per-form. Query performance validated at 10K+ items with indexed FormCode.",
+      "Full relational data modeling, row-level security, field-level security for PII, immutable audit trails, and managed solution ALM — enterprise-grade from day one.",
   },
   {
-    title: "DEC-2026-002: Dual-Track Architecture",
+    title: "DEC-2026-002: SharePoint Online as Interim Cost Optimization",
     problem:
-      "Complex cross-department views needed React flexibility; simple departmental forms needed citizen-developer accessibility.",
+      "Rapid migration of 361 forms requires immediate deployment, but premium licensing for 2,000+ users would cost $960K/year.",
     decision:
-      "React 19 code-first app for complex/shared functionality + 16 Canvas Apps for per-department business forms.",
+      "Deploy Phase 1 on SharePoint Online as an interim staging layer to avoid $960K/yr in premium licensing. Accept SPO constraints (5,000-item threshold, no relational integrity, no row/field-level security) with documented Dataverse migration path.",
     tradeoff:
-      "Two codebases to maintain, but each track optimizes for its user persona. Shared SharePoint data layer ensures consistency.",
+      "Accepts SPO limitations as Phase 1 trade-offs. SharePoint Online is explicitly NOT the target production architecture.",
     impact:
-      "Developers get full TypeScript/React power. Business users get Power Fx simplicity. Both read/write the same SharePoint lists.",
+      "$960K/year licensing cost avoided during rapid migration. Documented migration path to Dataverse ensures zero long-term architectural compromise.",
   },
   {
-    title: "DEC-2026-003: Standard Connectors Only",
+    title: "DEC-2026-003: Dual-Track Architecture",
     problem:
-      "Premium connectors (Dataverse, SQL, custom APIs) would increase per-user licensing by $40/user/month for 2,000+ users.",
+      "Complex cross-department views needed React flexibility; simple departmental forms needed citizen-developer accessibility; data-heavy back-office processes needed Model-Driven Apps.",
     decision:
-      "Use only standard connectors included in existing M365 E3/E5 licenses: SharePoint, Office 365 Users, Outlook, Teams.",
+      "React 19 code-first app for complex/shared functionality + 16 Canvas Apps for per-department business forms + Model-Driven Apps for data-heavy processes.",
     tradeoff:
-      "No direct SQL Server or Dataverse for most forms. Workaround: SharePoint lists with indexed columns for query performance.",
+      "Three delivery tracks, but each optimizes for its user persona. Shared Dataverse data layer ensures consistency.",
     impact:
-      "$960K/year licensing cost avoided. Dataverse used only for E-Procurement and Rebate Approval where relational integrity is mandatory.",
+      "Developers get TypeScript/React power. Business users get Power Fx simplicity. Data-heavy processes get Model-Driven App capabilities. All read/write the same Dataverse tables.",
   },
   {
-    title: "DEC-2026-007: Model Columns Over Remarks JSON",
+    title: "DEC-2026-004: C# Plugins for Business Rule Enforcement",
     problem:
-      "Legacy enterprise forms stored arbitrary data in multi-line text fields — unsearchable, unvalidatable, unqueryable.",
+      "Business rules enforced in Canvas App Power Fx create maintenance nightmares — different entry points (Canvas, Model-Driven, Power Automate) can bypass validation.",
     decision:
-      "Every field gets its own SharePoint column (typed). No JSON blobs in Remarks. Child lists for repeating data.",
+      "C# Dataverse Plugins registered on Pre/Post-Operation execution pipeline stages enforce business rules at the data layer, not in the UI.",
     tradeoff:
-      "More columns to manage (100+ per MainDB list), but enables native SharePoint indexing, filtering, sorting, and Power BI reporting.",
+      "Requires C# development expertise and plugin registration, but ensures consistent validation regardless of entry point.",
     impact:
-      "Data accuracy improved from ~70% (free-text) to 98% (typed/validated). Power BI dashboards became possible without ETL.",
+      "Business rules enforced consistently across Canvas Apps, Model-Driven Apps, and Power Automate flows. Application Insights telemetry for performance monitoring.",
+  },
+  {
+    title: "DEC-2026-005: Solution Segmentation for Enterprise ALM",
+    problem:
+      "Monolithic solutions create deployment risk — a bug in one component can block the entire release.",
+    decision:
+      "Solution Segmentation: Holding solution (shared components) → Target managed solutions (Core Entities, Business Logic, UI Layer). Deployment Settings Files with per-environment configuration.",
+    tradeoff:
+      "More complex solution management, but enables independent deployment of components and reduced blast radius.",
+    impact:
+      "Independent deployment cycles per component. Reduced deployment risk. Staged Dev→Build→Test→Prod promotion with Solution Checker on every PR.",
   },
 ];
 
@@ -273,39 +332,53 @@ const MERMAID_DIAGRAM = `graph TB
     subgraph PRESENTATION["Presentation"]
         REACT["React 19 Code-First App"]:::pres
         CANVAS["16 Canvas Apps"]:::pres
+        MDA["Model-Driven Apps"]:::pres
     end
-    subgraph INTEGRATION["Integration"]
+    subgraph INTEGRATION["Integration & Security"]
         PA["Power Automate Flows"]:::inte
         CC["Custom Connectors"]:::inte
+        PLUGINS["C# Dataverse Plugins"]:::inte
+        PCF["PCF Controls"]:::inte
     end
-    subgraph DATA_LAYER["Data"]
-        SP["SharePoint Online"]:::data
-        DV["Dataverse"]:::data
+    subgraph DATA_LAYER["Dataverse Target (Primary)"]
+        DV["Dataverse Tables"]:::data
+        BU["Business Units"]:::data
+        SR["Security Roles"]:::data
+        FSP["Field Security Profiles"]:::data
     end
-    subgraph ENTERPRISE["Enterprise"]
-        ERP["ERP"]:::ent
+    subgraph INTERIM["SharePoint Online (Interim)"]
+        SP["MainDB_{Dept} Lists"]:::interim
+    end
+    subgraph ENTERPRISE["Enterprise Systems"]
+        ERP["Oracle PowerBiz ERP"]:::ent
+        ENTRA["Microsoft Entra ID"]:::ent
         M365["Microsoft 365"]:::ent
     end
-    subgraph DEVOPS["DevOps & AI"]
-        AI["50+ AI Agents"]:::dev
+    subgraph DEVOPS["Enterprise ALM & AI"]
+        AI["AI-Assisted Pipelines"]:::dev
         CICD["GitHub Actions CI/CD"]:::dev
+        PAC["PAC CLI"]:::dev
     end
-    REACT --> SP
-    CANVAS --> SP
-    SP --> PA
-    SP --> DV
+    REACT --> DV
+    CANVAS --> DV
+    MDA --> DV
+    DV --> PA
+    DV --> CC
+    DV --> PLUGINS
+    MDA --> PCF
     PA --> M365
-    PA --> CC
-    DV <--> CC
     CC <--> ERP
-    REACT -.-> AI
-    CANVAS -.-> AI
+    PLUGINS --> DV
+    ENTRA --> DV
+    SP -.-> DV
+    PA --> SP
     AI -.-> CICD
-    CICD -.-> REACT
-    CICD -.-> CANVAS
+    CICD -.-> PAC
+    PAC -.-> DV
     classDef pres fill:#0d1117,stroke:#58a6ff,stroke-width:2px,color:#e6edf3
     classDef inte fill:#0d1117,stroke:#3fb950,stroke-width:2px,color:#e6edf3
-    classDef data fill:#0d1117,stroke:#bc8cff,stroke-width:2px,color:#e6edf3
+    classDef data fill:#0d1117,stroke:#f0883e,stroke-width:2px,color:#e6edf3
+    classDef interim fill:#0d1117,stroke:#bc8cff,stroke-width:2px,color:#e6edf3,stroke-dasharray:5 5
     classDef ent fill:#0d1117,stroke:#ffa657,stroke-width:2px,color:#e6edf3
     classDef dev fill:#0d1117,stroke:#f85149,stroke-width:2px,color:#e6edf3`;
 

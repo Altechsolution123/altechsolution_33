@@ -12,18 +12,18 @@ interface NavSection {
 }
 
 const SECTIONS: NavSection[] = [
-  { id: "hero", i18nKey: "home", icon: "🏠" },
-  { id: "about", i18nKey: "about", icon: "👤" },
-  { id: "skills", i18nKey: "skills", icon: "🧠" },
-  { id: "projects", i18nKey: "projects", icon: "📂" },
-  { id: "journey", i18nKey: "journey", icon: "🛤️" },
-  { id: "portfolio-showcase", i18nKey: "portfolio", icon: "📁" },
-  { id: "architecture", i18nKey: "architecture", icon: "🏗️" },
-  { id: "performance", i18nKey: "performance", icon: "⚡" },
-  { id: "testimonials", i18nKey: "testimonials", icon: "💬" },
-  { id: "gallery", i18nKey: "gallery", icon: "🖼️" },
-  { id: "downloads", i18nKey: "downloads", icon: "📥" },
-  { id: "contact", i18nKey: "contact", icon: "📧" },
+  { id: "hero", i18nKey: "home", icon: "●" },
+  { id: "about", i18nKey: "about", icon: "◎" },
+  { id: "skills", i18nKey: "skills", icon: "◆" },
+  { id: "projects", i18nKey: "projects", icon: "⊞" },
+  { id: "journey", i18nKey: "journey", icon: "▶" },
+  { id: "portfolio-showcase", i18nKey: "portfolio", icon: "⬡" },
+  { id: "architecture", i18nKey: "architecture", icon: "⊟" },
+  { id: "performance", i18nKey: "performance", icon: "◎" },
+  { id: "testimonials", i18nKey: "testimonials", icon: "◇" },
+  { id: "gallery", i18nKey: "gallery", icon: "⊡" },
+  { id: "downloads", i18nKey: "downloads", icon: "⇩" },
+  { id: "contact", i18nKey: "contact", icon: "✉" },
 ];
 
 // ============================================================

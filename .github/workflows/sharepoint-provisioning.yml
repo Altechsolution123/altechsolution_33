@@ -1,0 +1,115 @@
+# SharePoint Site Provisioning Pipeline
+# Idempotent provisioning of 28+ department SharePoint sites using PnP PowerShell
+
+name: SharePoint Site Provisioning
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Target environment"
+        required: true
+        type: choice
+        options: [development, test, production]
+      department:
+        description: "Department code (all, IT, HR, FIN, PROC, QA, ENG, SHE, MKT, LOG)"
+        required: true
+        default: "all"
+
+jobs:
+  provision:
+    name: Provision SharePoint Sites
+    runs-on: windows-latest
+    environment: ${{ github.event.inputs.environment }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install PnP PowerShell
+        run: |
+          Install-Module -Name PnP.PowerShell -Force -Scope CurrentUser -AllowClobber
+
+      - name: Provision Department Sites
+        shell: pwsh
+        run: |
+          $departments = @("IT", "HR", "FIN", "PROC", "QA", "ENG", "SHE", "MKT", "LOG")
+
+          if ("${{ github.event.inputs.department }}" -ne "all") {
+            $departments = @("${{ github.event.inputs.department }}")
+          }
+
+          $siteUrl = "${{ secrets.SHAREPOINT_ADMIN_URL }}"
+          $conn = Connect-PnPOnline -Url $siteUrl `
+            -ClientId "${{ secrets.APP_ID }}" `
+            -ClientSecret "${{ secrets.CLIENT_SECRET }}" `
+            -Tenant "${{ secrets.TENANT_ID }}" `
+            -ReturnConnection
+
+          foreach ($dept in $departments) {
+            Write-Host "::group::Provisioning department: $dept"
+
+            # ── Site template with document library, MainDB list, permissions ──
+            $template = @{
+              Title       = "Digital $dept"
+              Alias       = "Digital$dept"
+              Description = "$dept Department — Digital Transformation Site"
+              Lcid        = 1033
+              Template    = "STS#3"  # Modern Team Site
+              Owner       = "${{ secrets.SITE_OWNER }}"
+              StorageQuota = 1024
+            }
+
+            # Create site
+            $site = New-PnPSite @template -Connection $conn
+
+            # Reconnect to new site
+            $deptConn = Connect-PnPOnline -Url $site.Url `
+              -ClientId "${{ secrets.APP_ID }}" `
+              -ClientSecret "${{ secrets.CLIENT_SECRET }}" `
+              -Tenant "${{ secrets.TENANT_ID }}" `
+              -ReturnConnection
+
+            # ── Create MainDB list with typed columns ──
+            New-PnPList -Title "MainDB_$dept" -Template GenericList -Connection $deptConn
+
+            Set-PnPList -Identity "MainDB_$dept" `
+              -EnableVersioning $true `
+              -EnableMinorVersions $false `
+              -Connection $deptConn
+
+            # FormCode discriminator column (delegation-safe, indexed)
+            Add-PnPField -List "MainDB_$dept" `
+              -DisplayName "FormCode" `
+              -InternalName "FormCode" `
+              -Type Text `
+              -AddToDefaultView `
+              -Connection $deptConn
+
+            # Index FormCode
+            Set-PnPIndexedProperty -List "MainDB_$dept" `
+              -KeyFields "FormCode" `
+              -Connection $deptConn
+
+            # Status column (choice, indexed)
+            Add-PnPField -List "MainDB_$dept" `
+              -DisplayName "Status" `
+              -InternalName "StatusCode" `
+              -Type Choice `
+              -Choices @("Draft","Submitted","Approved","Rejected","Completed") `
+              -AddToDefaultView `
+              -Connection $deptConn
+
+            Set-PnPIndexedProperty -List "MainDB_$dept" `
+              -KeyFields "StatusCode" `
+              -Connection $deptConn
+
+            # Breakdown permission inheritance for row-level access
+            Set-PnPList -Identity "MainDB_$dept" `
+              -ReadSecurity 2 `
+              -Connection $deptConn
+
+            Write-Host "✅ Provisioned MainDB_$dept list with typed columns and indexes"
+            Write-Host "::endgroup::"
+          }
+
+          Write-Host "::notice::All department sites provisioned successfully"

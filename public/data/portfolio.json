@@ -1,33 +1,33 @@
 {
   "developer": {
     "name": "Ali Akhmad Fauzie",
-    "title": "Power Platform Solution Manager | Enterprise Solution Architect | AI & Automation Lead",
+    "title": "Enterprise Power Platform & Dynamics 365 Solution Architect | Dataverse Data Architect | ALM & AI Engineering Lead",
     "email": "aliakhmadfauzie@gmail.com",
     "phone": "+60 13-295 7406",
-    "location": "Malaysia",
+    "location": "Indonesia",
     "github": "altechsolution123",
     "linkedin": "aliakhmadf",
     "twitter": "altechsolution123",
     "status": "Available for enterprise architecture & AI consulting",
-    "bio": "Enterprise Solution Architect and Power Platform Solution Manager with 7+ years of service delivery, operations leadership, and low-code/code-first transformation experience.\n\nProven track record leading large-scale digital modernization programs — architecting a Fortune 500 transformation that migrated 361 legacy Lotus Domino forms into a dual-track Microsoft 365 environment with 16 production Power Apps Canvas apps, 7,878+ Canvas screens, 400+ TypeScript components, and a React 19 plus TypeScript code-first platform.\n\nExpertise spans AI-enabled software delivery with 50+ specialized Copilot agents across 12 automated workflows, Power Platform governance with WCAG 2.2 AA and OWASP Top 10 standards, SharePoint-first data architecture with FormCode discriminator patterns, and operational process optimization with 98%+ SLA compliance.",
+    "bio": "Enterprise Power Platform & Dynamics 365 Solution Architect with 7+ years of service delivery, operations leadership, and dual-track transformation experience.\n\nProven track record leading large-scale digital modernization programs — architecting a transformation that catalogued 361 legacy Lotus Domino forms and deployed 16 production Power Apps across 28+ departments. The architecture follows a Dataverse-first strategy with SharePoint Online serving strictly as an interim staging layer during Phase 1 to eliminate $960K/yr in premium licensing costs.\n\nExpertise spans Dataverse data architecture with Business Units, Security Roles, Field Security Profiles, and polymorphic lookups; enterprise ALM with GitHub Actions / Azure DevOps CI/CD pipelines using Power Platform Build Tools; C# Dataverse Plugins on Pre/Post-Operation pipeline stages; PCF Controls (TypeScript/React); and AI-assisted development with domain-specific Copilot assistants governed by DLP policies and content filtering. Power Platform governance aligned to WCAG 2.2 AA, OWASP Top 10, and GxP compliance standards, with 98%+ SLA compliance.",
     "avatar": "https://github.com/altechsolution123.png"
   },
   "metrics": [
     {
-      "label": "Apps Deployed",
+      "label": "Production Apps",
       "value": 16,
       "icon": "rocket",
       "suffix": ""
     },
     {
-      "label": "Forms Migrated",
-      "value": 365,
+      "label": "Forms Catalogued",
+      "value": 361,
       "icon": "database",
-      "suffix": "+"
+      "suffix": ""
     },
     {
-      "label": "Canvas Screens",
-      "value": 7878,
+      "label": "Departments",
+      "value": 28,
       "icon": "layout",
       "suffix": "+"
     },

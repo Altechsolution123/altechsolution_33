@@ -8,14 +8,16 @@ import styles from "./StatsSection.module.css";
 // Icon Map
 // ============================================================
 const ICON_MAP: Record<string, string> = {
-  rocket: "🚀",
-  clock: "⏱️",
-  star: "⭐",
-  code: "💻",
-  database: "🗄️",
-  layout: "📐",
-  users: "👥",
-  check: "✅",
+  rocket: "◆",
+  clock: "◷",
+  star: "★",
+  code: "⌬",
+  database: "⊞",
+  layout: "▦",
+  users: "◉",
+  check: "✓",
+  shield: "⬡",
+  dollar: "◇",
 };
 
 // ============================================================

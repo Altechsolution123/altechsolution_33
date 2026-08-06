@@ -168,8 +168,8 @@ const AppContent: React.FC = () => {
                       lineHeight: 1.5,
                     }}
                   >
-                    Senior Team Manager | Low-Code Solution Architect | Power
-                    Platform &amp; AI Copilot Developer
+                    Enterprise Power Platform &amp; Dynamics 365 Solution
+                    Architect | Dataverse Data Architect | AI &amp; ALM Lead
                   </p>
                   <p
                     style={{
@@ -180,19 +180,20 @@ const AppContent: React.FC = () => {
                     }}
                   >
                     I bridge the gap between complex business operations and
-                    modern low-code digital innovation. With a background in
+                    enterprise-grade Microsoft Power Platform architecture. With
+                    7+ years of service delivery and operations leadership, I
+                    bring a unique dual perspective:{" "}
                     <strong style={{ color: theme.colors.text.primary }}>
-                      {" "}
-                      International Business Management
+                      Dataverse-first data architecture
                     </strong>{" "}
-                    and extensive experience in{" "}
+                    with Business Units, Security Roles, and polymorphic lookups
+                    — not SharePoint as a production data store. SharePoint
+                    Online was used only as an{" "}
                     <strong style={{ color: theme.colors.text.primary }}>
-                      operations leadership
-                    </strong>
-                    , I bring a unique dual perspective to technology: I don't
-                    just build applications; I solve practical operational
-                    challenges and optimize workflows to drive tangible business
-                    growth.
+                      interim cost-optimization staging layer
+                    </strong>{" "}
+                    during rapid migration, with a documented Dataverse
+                    Migration Blueprint as the enterprise-grade target.
                   </p>
                 </div>
               </div>
@@ -523,12 +524,12 @@ const AppContent: React.FC = () => {
                   [
                     "2024–2025",
                     "🤖",
-                    "Copilot Studio & AI Agent Architect | Freelance Consultant",
+                    "AI-Assisted Development & Copilot Studio Architecture",
                   ],
                   [
                     "2025–2026",
                     "🚀",
-                    "Enterprise Modernization: 365 Apps → M365 Power Platform",
+                    "Enterprise Modernization: 361 Forms → M365 Power Platform",
                   ],
                 ].map(([date, emoji, desc]) => (
                   <div
@@ -645,22 +646,33 @@ const AppContent: React.FC = () => {
               <ContributionGrid skills={data.skills} />
             </section>
 
-            {/* Impact Metrics Banner */}
+            {/* Impact Metrics Banner — Enterprise KPIs */}
             <section style={{ marginTop: theme.spacing["3xl"] }}>
               <div className="impact-banner">
                 <div className="impact-item">
-                  <span className="impact-value">70%</span>
-                  <span className="impact-label">Migration Time Reduction</span>
+                  <span className="impact-value">$960K</span>
+                  <span className="impact-label">
+                    Annual License Cost Avoided
+                  </span>
                   <span className="impact-desc">
-                    AI-assisted pipelines vs. manual development
+                    SharePoint Online interim deployment eliminated premium
+                    connector licensing
                   </span>
                 </div>
                 <div className="impact-divider" />
                 <div className="impact-item">
-                  <span className="impact-value">80%</span>
-                  <span className="impact-label">Task Automation Rate</span>
+                  <span className="impact-value">70%</span>
+                  <span className="impact-label">Delivery Time Reduction</span>
                   <span className="impact-desc">
-                    Manual workflows replaced with Power Automate
+                    AI-assisted pipelines vs. manual development cycles
+                  </span>
+                </div>
+                <div className="impact-divider" />
+                <div className="impact-item">
+                  <span className="impact-value">98%+</span>
+                  <span className="impact-label">SLA Compliance</span>
+                  <span className="impact-desc">
+                    Across 361 migrated business applications and 2,000+ users
                   </span>
                 </div>
                 <div className="impact-divider" />
@@ -668,7 +680,8 @@ const AppContent: React.FC = () => {
                   <span className="impact-value">98%</span>
                   <span className="impact-label">Data Accuracy Achieved</span>
                   <span className="impact-desc">
-                    Validated across 7,878 screen definitions
+                    Typed SharePoint/Dataverse columns vs. 70% with legacy
+                    free-text
                   </span>
                 </div>
               </div>
@@ -721,6 +734,322 @@ const AppContent: React.FC = () => {
               <Timeline events={data.timeline} />
             </section>
 
+            {/* ── Enterprise Architecture & Governance ── */}
+            <section
+              id="enterprise-architecture"
+              style={{ marginTop: theme.spacing["3xl"] }}
+            >
+              <h2
+                style={{
+                  color: theme.colors.text.primary,
+                  fontSize: theme.typography.fontSize["2xl"],
+                  fontWeight: 700,
+                  marginBottom: theme.spacing.sm,
+                  letterSpacing: theme.typography.letterSpacing.tight,
+                }}
+              >
+                Enterprise Architecture &amp; Governance
+              </h2>
+              <p
+                style={{
+                  color: theme.colors.text.secondary,
+                  fontSize: theme.typography.fontSize.md,
+                  marginBottom: theme.spacing.lg,
+                  maxWidth: "800px",
+                }}
+              >
+                Dataverse-first architecture with enterprise ALM, security role
+                inheritance, and managed solution governance. SharePoint Online
+                used only as a cost-optimization staging layer — not the target
+                production data architecture.
+              </p>
+
+              {/* Dataverse ERD */}
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+                  gap: theme.spacing.md,
+                  marginBottom: theme.spacing.xl,
+                }}
+              >
+                {/* ERD Card */}
+                <div
+                  style={{
+                    padding: "24px",
+                    backgroundColor: theme.colors.bg.secondary,
+                    borderRadius: theme.borderRadius.lg,
+                    border: `1px solid ${theme.colors.border.default}`,
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "10px",
+                      marginBottom: "16px",
+                    }}
+                  >
+                    <span style={{ fontSize: "1.5rem" }}>🏛️</span>
+                    <h3
+                      style={{
+                        color: theme.colors.text.primary,
+                        fontSize: theme.typography.fontSize.md,
+                        fontWeight: 600,
+                        margin: 0,
+                      }}
+                    >
+                      Dataverse Entity-Relationship Model
+                    </h3>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "8px",
+                    }}
+                  >
+                    {[
+                      "MainDB_{Dept} parent tables with FormCode discriminator",
+                      "Child task tables with polymorphic lookups",
+                      "Business Unit hierarchy → departmental isolation",
+                      "Security Role inheritance (5-tier approval)",
+                      "Field Security Profiles for PII/financial data",
+                      "Alternate keys for Oracle ERP bidirectional sync",
+                    ].map((item) => (
+                      <div
+                        key={item}
+                        style={{
+                          display: "flex",
+                          alignItems: "flex-start",
+                          gap: "8px",
+                          fontSize: "0.8125rem",
+                          color: theme.colors.text.secondary,
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        <span
+                          style={{
+                            color: theme.colors.accent.blue,
+                            flexShrink: 0,
+                          }}
+                        >
+                          →
+                        </span>
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Security Model Card */}
+                <div
+                  style={{
+                    padding: "24px",
+                    backgroundColor: theme.colors.bg.secondary,
+                    borderRadius: theme.borderRadius.lg,
+                    border: `1px solid ${theme.colors.border.default}`,
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "10px",
+                      marginBottom: "16px",
+                    }}
+                  >
+                    <span style={{ fontSize: "1.5rem" }}>🔒</span>
+                    <h3
+                      style={{
+                        color: theme.colors.text.primary,
+                        fontSize: theme.typography.fontSize.md,
+                        fontWeight: 600,
+                        margin: 0,
+                      }}
+                    >
+                      Security &amp; Compliance Architecture
+                    </h3>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "8px",
+                    }}
+                  >
+                    {[
+                      "Microsoft Entra ID: Conditional Access, MFA, SSO",
+                      "Dataverse Security Roles with row-level isolation",
+                      "Field Security Profiles for sensitive columns",
+                      "GxP immutable audit trails (column-level tracking)",
+                      "WCAG 2.2 AA accessibility (38+ anti-patterns)",
+                      "OWASP Top 10 security (55+ anti-patterns)",
+                    ].map((item) => (
+                      <div
+                        key={item}
+                        style={{
+                          display: "flex",
+                          alignItems: "flex-start",
+                          gap: "8px",
+                          fontSize: "0.8125rem",
+                          color: theme.colors.text.secondary,
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        <span
+                          style={{
+                            color: theme.colors.accent.green,
+                            flexShrink: 0,
+                          }}
+                        >
+                          →
+                        </span>
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* ALM Pipeline Card */}
+                <div
+                  style={{
+                    padding: "24px",
+                    backgroundColor: theme.colors.bg.secondary,
+                    borderRadius: theme.borderRadius.lg,
+                    border: `1px solid ${theme.colors.border.default}`,
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "10px",
+                      marginBottom: "16px",
+                    }}
+                  >
+                    <span style={{ fontSize: "1.5rem" }}>🔄</span>
+                    <h3
+                      style={{
+                        color: theme.colors.text.primary,
+                        fontSize: theme.typography.fontSize.md,
+                        fontWeight: 600,
+                        margin: 0,
+                      }}
+                    >
+                      ALM &amp; Solution Governance
+                    </h3>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "8px",
+                    }}
+                  >
+                    {[
+                      "Solution Segmentation: Holding → Feature Area managed solutions",
+                      "Environment Variables for per-environment configuration",
+                      "Connection References for data source portability",
+                      "PAC CLI: solution clone, pack/unpack, code generate",
+                      "Staged promotion: Dev → Build → Test → Prod",
+                      "Solution Checker on every PR for compliance gates",
+                    ].map((item) => (
+                      <div
+                        key={item}
+                        style={{
+                          display: "flex",
+                          alignItems: "flex-start",
+                          gap: "8px",
+                          fontSize: "0.8125rem",
+                          color: theme.colors.text.secondary,
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        <span
+                          style={{
+                            color: theme.colors.accent.purple,
+                            flexShrink: 0,
+                          }}
+                        >
+                          →
+                        </span>
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* C# Plugins & PCF Card */}
+                <div
+                  style={{
+                    padding: "24px",
+                    backgroundColor: theme.colors.bg.secondary,
+                    borderRadius: theme.borderRadius.lg,
+                    border: `1px solid ${theme.colors.border.default}`,
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "10px",
+                      marginBottom: "16px",
+                    }}
+                  >
+                    <span style={{ fontSize: "1.5rem" }}>⚡</span>
+                    <h3
+                      style={{
+                        color: theme.colors.text.primary,
+                        fontSize: theme.typography.fontSize.md,
+                        fontWeight: 600,
+                        margin: 0,
+                      }}
+                    >
+                      Pro-Code Extensions
+                    </h3>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "8px",
+                    }}
+                  >
+                    {[
+                      "C# Dataverse Plugins on Pre/Post-Operation pipeline",
+                      "PCF Controls (TypeScript/React) for Model-Driven Apps",
+                      "Application Insights telemetry for plugin monitoring",
+                      "Custom workflow activities for complex business logic",
+                      "Server-side OData filtering for lookup components",
+                    ].map((item) => (
+                      <div
+                        key={item}
+                        style={{
+                          display: "flex",
+                          alignItems: "flex-start",
+                          gap: "8px",
+                          fontSize: "0.8125rem",
+                          color: theme.colors.text.secondary,
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        <span
+                          style={{
+                            color: theme.colors.accent.orange,
+                            flexShrink: 0,
+                          }}
+                        >
+                          →
+                        </span>
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+
             {/* Case Study */}
             <CaseStudy />
 
@@ -741,7 +1070,7 @@ const AppContent: React.FC = () => {
                   letterSpacing: theme.typography.letterSpacing.tight,
                 }}
               >
-                🔧 Code & Architecture
+                Technical Execution &amp; Architecture Patterns
               </h2>
               <p
                 style={{
@@ -750,9 +1079,9 @@ const AppContent: React.FC = () => {
                   marginBottom: theme.spacing.lg,
                 }}
               >
-                A closer look at the technical patterns powering this migration
-                — from PA YAML screen definitions to AI-assisted development
-                pipelines.
+                Enterprise-grade patterns powering the migration — from PA YAML
+                screen definitions to C# Dataverse Plugins and AI-assisted
+                development pipelines.
               </p>
 
               {/* PA YAML Code Snippet */}
