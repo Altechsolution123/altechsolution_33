@@ -1476,7 +1476,8 @@ const migrationPipelines: AgentPipeline[] = [
                   marginBottom: theme.spacing.lg,
                 }}
               >
-                Resume & portfolio resources available for download.
+                Resume, portfolio resources, and inspectable enterprise code
+                samples available for download.
               </p>
               <div
                 style={{
@@ -1521,6 +1522,107 @@ const migrationPipelines: AgentPipeline[] = [
                 >
                   &#x1F4E5; Download Resume (PDF)
                 </a>
+              </div>
+
+              {/* ── Code Samples ── */}
+              <h3
+                style={{
+                  color: theme.colors.text.primary,
+                  fontSize: theme.typography.fontSize.lg,
+                  fontWeight: 600,
+                  marginTop: theme.spacing["2xl"],
+                  marginBottom: theme.spacing.md,
+                }}
+              >
+                🔬 Technical Code Samples
+              </h3>
+              <p
+                style={{
+                  color: theme.colors.text.secondary,
+                  fontSize: theme.typography.fontSize.sm,
+                  marginBottom: theme.spacing.lg,
+                }}
+              >
+                Inspectable enterprise artifacts: CI/CD pipelines, C# Plugins,
+                PCF Controls, OpenAPI specs, and Dataverse ERD architecture.
+              </p>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  gap: "10px",
+                  flexWrap: "wrap",
+                }}
+              >
+                {[
+                  {
+                    label: "Azure DevOps CI/CD Pipeline",
+                    href: "code-samples/deployment-settings-pipeline.yml",
+                    icon: "⚙️",
+                  },
+                  {
+                    label: "GitHub Actions — Solution ALM",
+                    href: "https://github.com/altechsolution123/altechsolution_33/blob/main/.github/workflows/power-platform-cicd.yml",
+                    icon: "🔁",
+                  },
+                  {
+                    label: "C# Plugin — PO Pre-Validation",
+                    href: "code-samples/purchase-order-prevalidation-plugin.cs",
+                    icon: "🔌",
+                  },
+                  {
+                    label: "PCF Control — Approval Tree",
+                    href: "code-samples/approval-tree-pcf-control.tsx",
+                    icon: "🌲",
+                  },
+                  {
+                    label: "OpenAPI — Oracle ERP Connector",
+                    href: "code-samples/oracle-powerbiz-erp-connector.yaml",
+                    icon: "🔗",
+                  },
+                  {
+                    label: "Dataverse ERD — Mermaid Diagram",
+                    href: "code-samples/dataverse-erd.md",
+                    icon: "📐",
+                  },
+                ].map(({ label, href, icon }) => (
+                  <a
+                    key={label}
+                    href={`${import.meta.env.BASE_URL}${href}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={label}
+                    style={{
+                      padding: "10px 18px",
+                      backgroundColor: theme.colors.bg.secondary,
+                      color: theme.colors.text.primary,
+                      border: `1px solid ${theme.colors.border.default}`,
+                      borderRadius: theme.borderRadius.md,
+                      fontWeight: 500,
+                      textDecoration: "none",
+                      fontSize: "0.8125rem",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "8px",
+                      transition: theme.transitions.fast,
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor =
+                        theme.colors.accent.blue;
+                      e.currentTarget.style.backgroundColor =
+                        theme.colors.bg.elevation[2];
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor =
+                        theme.colors.border.default;
+                      e.currentTarget.style.backgroundColor =
+                        theme.colors.bg.secondary;
+                    }}
+                  >
+                    <span>{icon}</span>
+                    {label}
+                  </a>
+                ))}
               </div>
             </section>
 

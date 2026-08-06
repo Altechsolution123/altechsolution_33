@@ -60,12 +60,12 @@ const en: TranslationDict = {
   },
   status: {
     powerPlatformArchitect: "Power Platform Architect",
-    availableMessage: "Available for enterprise architecture & AI consulting",
+    availableMessage: "Open to senior architecture & AI leadership roles",
     branch: "main",
     lastUpdated: "Last updated",
   },
   hero: {
-    available: "Available for enterprise architecture & AI consulting",
+    available: "Open to senior architecture & AI leadership roles",
     viewCaseStudy: "View Case Study",
     getInTouch: "Get in Touch",
     github: "GitHub",

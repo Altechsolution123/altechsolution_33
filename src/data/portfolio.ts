@@ -279,7 +279,7 @@ export const developer = {
   github: "altechsolution123",
   linkedin: "aliakhmadf",
   twitter: "altechsolution123",
-  status: "Available for enterprise architecture & AI consulting",
+  status: "Open to senior architecture & AI leadership roles",
   bio: personalInfo.bio,
   avatar: `${import.meta.env.BASE_URL}avatar.jpg`,
 } as const;

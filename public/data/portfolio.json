@@ -8,7 +8,7 @@
     "github": "altechsolution123",
     "linkedin": "aliakhmadf",
     "twitter": "altechsolution123",
-    "status": "Available for enterprise architecture & AI consulting",
+    "status": "Open to senior architecture & AI leadership roles",
     "bio": "Enterprise Power Platform & Dynamics 365 Solution Architect with 7+ years of service delivery, operations leadership, and dual-track transformation experience.\n\nProven track record leading large-scale digital modernization programs — architecting a transformation that catalogued 361 legacy Lotus Domino forms and deployed 16 production Power Apps across 28+ departments. The architecture follows a Dataverse-first strategy with SharePoint Online serving strictly as an interim staging layer during Phase 1 to eliminate $960K/yr in premium licensing costs.\n\nExpertise spans Dataverse data architecture with Business Units, Security Roles, Field Security Profiles, and polymorphic lookups; enterprise ALM with GitHub Actions / Azure DevOps CI/CD pipelines using Power Platform Build Tools; C# Dataverse Plugins on Pre/Post-Operation pipeline stages; PCF Controls (TypeScript/React); and AI-assisted development with domain-specific Copilot assistants governed by DLP policies and content filtering. Power Platform governance aligned to WCAG 2.2 AA, OWASP Top 10, and GxP compliance standards, with 98%+ SLA compliance.",
     "avatar": "https://github.com/altechsolution123.png"
   },
@@ -171,27 +171,27 @@
     },
     {
       "name": "Enterprise Solution Architecture",
-      "level": 5,
+      "level": 4,
       "category": "leadership"
     },
     {
       "name": "Power Platform Governance",
-      "level": 5,
+      "level": 4,
       "category": "leadership"
     },
     {
       "name": "AI-Enabled Delivery & Automation",
-      "level": 5,
+      "level": 4,
       "category": "leadership"
     },
     {
       "name": "SLA & Operations Management (98%+)",
-      "level": 5,
+      "level": 4,
       "category": "leadership"
     },
     {
       "name": "Team Scaling (9→34+)",
-      "level": 5,
+      "level": 4,
       "category": "leadership"
     },
     {
@@ -210,7 +210,7 @@
       "title": "IOI Domino → Microsoft 365 Migration",
       "metrics": [
         {
-          "value": "365+",
+          "value": "361",
           "label": "Apps Migrated"
         },
         {
@@ -229,7 +229,7 @@
       "mergedDate": "2026-06-15",
       "commits": 1200,
       "statusColor": "green",
-      "description": "Led enterprise-wide migration of 365+ Lotus Domino business applications to Microsoft Power Platform across 28+ departments. Designed dual-track architecture (React 19 TypeScript + 16 Canvas Apps), built 50+ AI agents across 12 automated pipelines, and established enterprise governance standards.",
+      "description": "Led enterprise-wide migration of 361 Lotus Domino business applications to Microsoft Power Platform across 28+ departments. Designed dual-track architecture (React 19 TypeScript + 16 Canvas Apps), built 50+ AI agents across 12 automated pipelines, and established enterprise governance standards.",
       "tech": [
         "Power Apps",
         "Power Automate",
@@ -700,7 +700,7 @@
       "date": "2026-06-15",
       "emoji": "🚀",
       "title": "IOI Domino → M365 Migration Complete",
-      "description": "Successfully migrated 365+ Lotus Domino business forms to Microsoft Power Platform.",
+      "description": "Successfully migrated 361 Lotus Domino business forms to Microsoft Power Platform.",
       "highlights": [
         "16 production Power Apps deployed",
         "7,878 Canvas screen definitions in PA YAML v3.0",
